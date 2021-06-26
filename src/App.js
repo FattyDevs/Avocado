@@ -1,12 +1,26 @@
 
 import './App.css';
 import SportPage from "./Component/SportPage";
-function App() {
-  return (
-    <div className="App">
-<SportPage/>
-    </div>
-  );
+import Food from './Component/Food'
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// function App() {
+//   return (
+//     <div className="App">
+{/* <SportPage/> */}
+class App extends React.Component{
+  render(){
+    return(
+      <>
+
+<Food/>
+      </>
+    )
+  }
 }
+
+    {/* </div>
+  );
+} */}
 
 export default App;
