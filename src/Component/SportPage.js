@@ -1,11 +1,13 @@
 import React from "react";
+import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,CardDeck} from 'react-bootstrap';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   // Switch,
+//   Route
+// } from "react-router-dom";
 import OutdoorWorkouts from "./OtdoorWorkouts";
 
 
@@ -13,20 +15,29 @@ class SportPage extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      showCardOutdoor:false
+      showCardOutdoor:false,
+      outdoorData:"",
+      displayErrMsg: false
 
     }
   }
-  displayOutdoorWorkouts=()=>{
-    this.setState({
-      showCardOutdoor:!this.showCardOutdoor
-    })
-// let outDoorData=await axios.get("");
-let outDoorData=outDoorData.data;
-this.setState({
-  data:outDoorData
-})
-    // console.log(this.state.showCardOutdoor);
+  displayOutdoorWorkouts= async (e)=>{
+    e.preventDefault();
+    try{
+  let outDoorResult= await axios.get("http://localhost:3010/outdoor_workouts");
+  this.setState({
+    showCardOutdoor:!this.showCardOutdoor,
+    outdoorData:outDoorResult.data
+  });
+  // console.log(this.state.outdoorData);
+  // console.log(this.state.showCardOutdoor);
+    } catch {
+      this.setState({
+        errMsg: "OOPS! 404 Error This is a bad Response",
+        displayErrMsg: true,
+      });
+    }
+ console.log(this.state.showCardOutdoor);
   }
   render() {
     return (
@@ -45,18 +56,27 @@ this.setState({
 
   </Card>
 </CardDeck>
-<Router>
-  <switch>
-    <Route path="sports/outdoor">
-    {this.showCardOutdoor &&
+{this.showCardOutdoor &&
     <OutdoorWorkouts
-    displayOut={this.displayOutdoorWorkouts}
+    displayOut={this.state.outdoorData}
     />
     }
+
+{/* <Router>
+  <switch>
+    <Route path="sports/outdoor">
+<Link to="/sports/outdoor">outdoor</Link> */}
+    {/* {this.showCardOutdoor &&
+    <OutdoorWorkouts
+    displayOut={this.state.outdoorData}
+    />
+    } */}
+    {/* <Route path="sports/indoor" >
+    </Route>
     </Route>
   </switch>
 
-</Router>
+</Router> */}
 
 </>
     )
