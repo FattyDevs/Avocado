@@ -2,13 +2,14 @@ import React from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card,CardDeck} from 'react-bootstrap';
-// import { Link } from "react-router-dom";
-// import {
-//   BrowserRouter as Router,
-//   // Switch,
-//   Route
-// } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import OutdoorWorkouts from "./OtdoorWorkouts";
+// import { Button } from "bootstrap";
 
 
 class SportPage extends React.Component {
@@ -42,41 +43,48 @@ class SportPage extends React.Component {
   render() {
     return (
 <>
-
+<Router>
+  <Switch>
+  <Route exact path="/">
 <CardDeck>
-  <Card onClick={this.displayIndoorWorkouts}>
+  <Card onClick={(e)=>{this.displayIndoorWorkouts(e)}}>
     <Card.Body>
       <Card.Title>Indoor Workouts</Card.Title>
     </Card.Body>
   </Card>
-  <Card onClick={this.displayOutdoorWorkouts}>
+  <Card onClick={(e)=>this.displayOutdoorWorkouts(e)}>
     <Card.Body>
-      <Card.Title>Outdoor Workouts</Card.Title>
+    <Link to="/outdoor" style={{textDecoration: 'none'}}>Outdoor Workouts</Link>
+      {/* <Card.Title>Outdoor Workouts</Card.Title> */}
     </Card.Body>
 
   </Card>
 </CardDeck>
-{this.showCardOutdoor &&
-    <OutdoorWorkouts
-    displayOut={this.state.outdoorData}
-    />
-    }
-
-{/* <Router>
-  <switch>
-    <Route path="sports/outdoor">
-<Link to="/sports/outdoor">outdoor</Link> */}
-    {/* {this.showCardOutdoor &&
+</Route>
+{/* {this.state.showCardOutdoor &&
     <OutdoorWorkouts
     displayOut={this.state.outdoorData}
     />
     } */}
-    {/* <Route path="sports/indoor" >
-    </Route>
-    </Route>
-  </switch>
 
-</Router> */}
+
+  
+    
+    <Route path="/outdoor">
+{/* <Link to="/outdoor">outdoor</Link> */}
+<h1>Hello in outdoor</h1>
+    {this.state.showCardOutdoor &&
+    <OutdoorWorkouts
+    displayOut={this.state.outdoorData}
+    />
+    } 
+    </Route>
+    <Route path="/indoor" >
+    </Route>
+    
+  </Switch>
+
+</Router>
 
 </>
     )
