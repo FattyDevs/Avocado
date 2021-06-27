@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+import FavDish from './FavDish';
 import { Carousel, Container, Row, Col, CardColumns, Card, Button, Form, Modal } from 'react-bootstrap';
 
 class ResultFood extends React.Component{
@@ -7,7 +9,7 @@ class ResultFood extends React.Component{
         this.state={
             showIngredient:false,
             caloriesNum:0,
-            favDish :0
+            favFood:[]
            
         }
     }
@@ -21,25 +23,37 @@ class ResultFood extends React.Component{
         console.log(calories)
     }
         
-    favDishs=()=>{
-        const AddFood = {
-            label:label,
-            image:image,
-            url:url,
-            yield:yield,
-            calories:calories,
-            mealType:mealType,
-        }
-        this.setState({
-            
-            favDish : this.state.favDish+1
+    favDishs= async ()=>{
         
+        const AddFood = {
+            email:'asailik1993@gmail.com',
+            label:this.props.label,
+            image:this.props.image,
+            url:this.props.url,
+            yields:this.props.yield,
+            calories:this.props.calories,
+            mealType:this.props.mealType,
+        }
+        // console.log(AddFood) 
+        const favFood= await axios.post(`http://localhost:3010/addFood`,AddFood)
+
+        this.setState({
+            favFood:favFood.data
         })
-  console.log("this.state.favDish")
+  console.log(this.state.favFood)
     
 
     }
-
+    deletFunction = async (index) => {
+        
+        const ownerEmail = {
+          email: 'asilik!993@gmail.com'
+        }
+        let newFavAfterdelet = await axios.delete(`http://localhost:3010/deleteFood/${index}`, { params: ownerEmail })
+        this.setState({
+            favFood: newFavAfterdelet.data
+        })
+      }
 
 
 
@@ -54,17 +68,42 @@ class ResultFood extends React.Component{
     //         showIngredient:false,
     //     }) 
     // }
-    
+    // getting= async ()=>{
+
+    //     const getFood= await axios.get(`http://localhost:3010/getfood?email=asailik1993@gmail.com`) 
+    //     console.log(getFood.data)
+    // }
     
 Contact=()=> {
-
-    
       window.location.href = this.props.url;
     };
     
     render(){
         return(
             <>
+    <CardColumns>
+    <Container>
+          <Row>
+    {this.state.favFood.map((item,idx)=>{
+    return (
+    <FavDish
+    deletFunction={this.deletFunction}
+    label={item.label}
+    image={item.image}
+    url={item.url}
+    yields={item.yields}
+    calories={item.calories}
+    mealType={item.mealType}
+    idx={idx}
+
+    />
+    )
+})}
+  </Row>
+</Container>
+</CardColumns>
+                {/* <Button onClick={this.getting} variant="outline-secondary" id="button-n2">get</Button> */}
+
     <Col>
     <Card   style={{ width: '25rem' }} >
   <Card.Img variant="top" src={this.props.image} onClick={this.Contact}/>
@@ -75,7 +114,7 @@ Contact=()=> {
 <Col><Card.Text>{this.state.caloriesNum}Cal/Serving</Card.Text></Col>
 <Col><Card.Text>Serving:{this.props.yield}</Card.Text></Col>
 <Col>{this.props.mealType}</Col>
-<Col onClick={this.favDishs}> 💟 {this.state.favDish}</Col>
+<Col onClick={this.favDishs}> 💟 </Col>
           </Row>
  
    
