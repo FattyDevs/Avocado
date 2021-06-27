@@ -11,6 +11,7 @@ resultOfFoodUrl:[],
 showFilter:false,
 show:false,
 
+
 // diet:'balanced',
 // cuisineType:'',
 // mealType:'Dinner',
