@@ -87,6 +87,7 @@ class Home extends React.Component{
             <>
             <h1>Hello In Home Page</h1>
             <UserInfoForm show={this.state.show}  hide={this.hideModal} saveUser={this.saveUsersInfo} />
+            
             </>
         )
     }

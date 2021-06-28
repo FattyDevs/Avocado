@@ -7,6 +7,7 @@ import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './Component/HomePage';
 import './App.css';
 import SportPage from "./Component/SportPage";
+import Food from './Component/Food';
 
 import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
 
@@ -32,10 +33,12 @@ class App extends React.Component {
               </div>
 
             </Route>
-            <Route path="">
-
+            <Route path="/Food">
+         
+                <Food />
+             
             </Route>
-
+           
 
           </Switch>
           <Footer />
