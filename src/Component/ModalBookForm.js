@@ -1,10 +1,27 @@
 import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+// import { useAuth0 } from "@auth0/auth0-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import SweetAlert from 'react-bootstrap-sweetalert';
 class ModalBookForm extends React.Component {
   close=()=>{
     this.props.close();
+  }
+  handleName = (e) => {
+    this.setState({
+     name: e.target.value
+    })
+  }
+
+ handleEmail = (e) => {
+    this.setState({
+      email: e.target.value
+    })
+  }
+ handleClass = (e) => {
+    this.setState({
+      class: e.target.value
+    })
   }
   render() {
     return (
@@ -20,7 +37,7 @@ class ModalBookForm extends React.Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form onSubmit={this.props.getData}>
+            <Form onSubmit={(e)=>this.props.getData(e)}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label> Name</Form.Label>
                 <Form.Control

@@ -1,6 +1,11 @@
 import React from "react";
 // import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
+import { withAuth0 } from '@auth0/auth0-react';
+import ChoosenClass from "./ChooesnClass";
+
+
 import { FcClock, FcCalendar, FcMoneyTransfer } from "react-icons/fc";
 import {
   Card,
@@ -28,6 +33,7 @@ class BookClass extends React.Component {
     super(props);
     this.state = {
       showModal: false,
+      data:[]
       // closeModal: false,
     };
   }
@@ -46,6 +52,31 @@ class BookClass extends React.Component {
   };
   getData=(event)=>{
     event.preventDefault();
+    // const { user } = this.props.auth0;
+    const classInfo = {
+      name: event.target.name.value,
+      email:event.target.email.value,
+      clsses:event.target.class.value
+    }
+    console.log(classInfo);
+    let url=`http://localhost:3010/sportClass`;
+    axios.post(url,classInfo)
+    .then((result)=>{
+      this.setState({
+        data:result.data,
+        
+      })
+      console.log(this.state.data);
+    });
+  }
+  deletFunction = async (index) => {
+    const ownerEmail = {
+      email: 'asilik!993@gmail.com'
+    }
+    let newClassAfterDelete = await axios.delete(`http://localhost:3010/deletesport/${index}`, { params: ownerEmail })
+    this.setState({
+        data: newClassAfterDelete.data
+    })
   }
   render() {
     return (
@@ -171,17 +202,31 @@ class BookClass extends React.Component {
             </Accordion>
           </Card>
         </CardDeck>
-        {this.state.showModal && (
+        {/* {this.state.showModal && ( */}
           <ModalBookForm
             flag={this.state.showModal}
             close={this.closeModalForm}
             display={this.displayModalForm}
             getData={this.getData}
           />
-        )}
-        {console.log(this.state.showModal)}
+        {/* // )}
+        // {console.log(this.state.showModal)} */}
+{
+  this.state.data.map((item,idx)=>{
+    return(
+      <ChoosenClass
+      name={item.name}
+      email={item.email}
+      class={item.clsses}
+      idx={idx}
+      deleteClass={this.deletFunction}
+      />
+    )
+  })
+}
+  
       </>
     );
   }
 }
-export default BookClass;
+export default withAuth0(BookClass);
