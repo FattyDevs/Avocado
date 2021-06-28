@@ -13,6 +13,7 @@ import IndoorWorkouts from "./IndoorWorkouts";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
+import BookClass from "./BookClass";
 
 
 class SportPage extends React.Component {
@@ -68,12 +69,17 @@ class SportPage extends React.Component {
   render() {
     return (
       <>
+      <br/>
+
+      <h3 className="sport-qoute">"Good, Better, Best. Never let it rest. <br/> 
+      Until your Good is Better, and your Better is your Best. " </h3>
+
         <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/SportPage">
               <CardDeck className ="CardDeck">
                 <Card onClick={(e) => { this.displayIndoorWorkouts(e) }} className ="CardLeft">
-                  <Link to="/indoor" style={{ textDecoration: 'none', color:"white" }}>
+                  <Link to="/SportPage/indoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image2} alt="Card image" style={{ height:"320px"}} />
                   <Card.ImgOverlay>
                     <Card.Title className="CardTitle">
@@ -84,7 +90,7 @@ class SportPage extends React.Component {
                 </Card>
 
                 <Card onClick={(e) => { this.displayOutdoorWorkouts(e) }} className ="CardRight"> 
-                <Link to="/outdoor" style={{ textDecoration: 'none', color:"white" }}>
+                <Link to="/SportPage/outdoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image4} alt="Card image" style={{ height:"320px"}}/>
                   <Card.ImgOverlay>
                     <Card.Title className="CardTitle" style={{ padding: "120px"}}>
@@ -96,7 +102,7 @@ class SportPage extends React.Component {
               </CardDeck>
             </Route>
 
-            <Route path="/outdoor">
+            <Route path="/SportPage/outdoor">
               {/* <Link to="/outdoor">outdoor</Link> */}
               <h1>Hello in outdoor</h1>
               {this.state.showCardOutdoor &&
@@ -105,7 +111,7 @@ class SportPage extends React.Component {
                 />}
             </Route>
 
-            <Route path="/indoor" >
+            <Route path="/SportPage/indoor" >
               <h1>Hello in indoor</h1>
               {this.state.showCardIndoor &&
                 <IndoorWorkouts
@@ -114,7 +120,7 @@ class SportPage extends React.Component {
             </Route>
           </Switch>
         </Router>
-
+       <BookClass/>
       </>
     )
       ;

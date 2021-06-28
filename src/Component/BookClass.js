@@ -28,32 +28,36 @@ class BookClass extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      closeModal: true,
+      // closeModal: false,
     };
   }
-  displayModalForm = async () => {
-    this.setState = {
-      showModal: !this.state.showModal,
-    };
+  displayModalForm = () => {
+ this.setState({
+   showModal:true
+ })
     console.log("show is ", this.state.showModal);
   };
   closeModalForm = () => {
-    this.setState = {
-      closeModal: false,
-    };
-    console.log("close is ", this.state.closeModal);
+    // e.preventDefault();
+  this.setState({
+    showModal:false
+  })
+    console.log("close is ", this.state.showModal);
   };
+  getData=(event)=>{
+    event.preventDefault();
+  }
   render() {
     return (
       <>
         <ColoredLine color="#39A6A3" />
-        <br/> 
+        <br />
         <h1 className="BookClass-title"> Book an Online Class </h1>
-        <br/>
+        <br />
         <p>
           Of course you can learn to be active with our short courses in Jordan
         </p>
-        <br/> <br/>
+        <br /> <br />
         {/* <ColoredLine color="#A3A847" /> */}
         <CardDeck style={{ height: "400px" }}>
           <Card style={{ width: "18rem" }}>
@@ -66,29 +70,31 @@ class BookClass extends React.Component {
                 juggle the two, why not merge them together?
               </Card.Text>
               <Card.Body>
-              <Button onClick={() => this.displayModalForm()}>
-                <FcCalendar /> Book Now
-              </Button>
-            </Card.Body>
+                <Button onClick={() => this.setState({ showModal: true })}>
+                  <FcCalendar /> Book Now
+                </Button>
+              </Card.Body>
             </Card.Body>
             <Accordion defaultActiveKey="0">
               <Accordion.Toggle as={Card.Header} eventKey="1">
-               More Info
+                More Info
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
-              <ListGroup className="list-group-flush">
-                <ListGroupItem> Tue 22 Jun 2021- Tue 20 Jul 2021</ListGroupItem>
-                <ListGroupItem>
-                  {" "}
-                  <FcClock /> 9:30am - 10:30am (UTC+10:00)
-                </ListGroupItem>
-                <ListGroupItem>
-                  <FcMoneyTransfer /> 40 JD
-                </ListGroupItem>
-              </ListGroup>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>
+                    {" "}
+                    Tue 22 Jun 2021- Tue 20 Jul 2021
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    {" "}
+                    <FcClock /> 9:30am - 10:30am (UTC+10:00)
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <FcMoneyTransfer /> 40 JD
+                  </ListGroupItem>
+                </ListGroup>
               </Accordion.Collapse>
             </Accordion>
-            
           </Card>
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Image2} style={{ height: "600px" }} />
@@ -100,28 +106,30 @@ class BookClass extends React.Component {
                 are after new ways to build up your technique?
               </Card.Text>
               <Card.Body>
-              <Button onClick={() => this.displayModalForm()}>
-                <FcCalendar /> Book Now
-              </Button>
-            </Card.Body>
+                <Button onClick={() => this.setState({ showModal: true })}>
+                  <FcCalendar /> Book Now
+                </Button>
+              </Card.Body>
             </Card.Body>
             <Accordion defaultActiveKey="0">
               <Accordion.Toggle as={Card.Header} eventKey="1">
-               More Info
+                More Info
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
-            <ListGroup className="list-group-flush">
-              <ListGroupItem> Sat 03 Jul 2021-Sat 31 Jul 2021</ListGroupItem>
-              <ListGroupItem>
-                <FcClock /> 6:00pm - 7:00pm (UTC+10:00)
-              </ListGroupItem>
-              <ListGroupItem>
-                <FcMoneyTransfer /> 30 JD
-              </ListGroupItem>
-            </ListGroup>
-            </Accordion.Collapse>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>
+                    {" "}
+                    Sat 03 Jul 2021-Sat 31 Jul 2021
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <FcClock /> 6:00pm - 7:00pm (UTC+10:00)
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <FcMoneyTransfer /> 30 JD
+                  </ListGroupItem>
+                </ListGroup>
+              </Accordion.Collapse>
             </Accordion>
-
           </Card>
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Image3} style={{ height: "600px" }} />
@@ -134,37 +142,41 @@ class BookClass extends React.Component {
                 coach with confidence.
               </Card.Text>
               <Card.Body>
-              <Button onClick={() => this.displayModalForm()}>
-                {" "}
-                <FcCalendar /> Book Now
-              </Button>
-            </Card.Body>
+                <Button onClick={() => this.setState({ showModal: true })}>
+                  {" "}
+                  <FcCalendar /> Book Now
+                </Button>
+              </Card.Body>
             </Card.Body>
             <Accordion defaultActiveKey="0">
               <Accordion.Toggle as={Card.Header} eventKey="1">
-               More Info
+                More Info
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
-            <ListGroup className="list-group-flush">
-              <ListGroupItem> Wed 21 Jul 2021- Wed 18 Aug 2021</ListGroupItem>
-              <ListGroupItem>
-                {" "}
-                <FcClock />
-                7:00pm - 8:00pm (UTC+10:00)
-              </ListGroupItem>
-              <ListGroupItem>
-                <FcMoneyTransfer /> 35 JD
-              </ListGroupItem>
-            </ListGroup>
-            </Accordion.Collapse>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>
+                    {" "}
+                    Wed 21 Jul 2021- Wed 18 Aug 2021
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    {" "}
+                    <FcClock />
+                    7:00pm - 8:00pm (UTC+10:00)
+                  </ListGroupItem>
+                  <ListGroupItem>
+                    <FcMoneyTransfer /> 35 JD
+                  </ListGroupItem>
+                </ListGroup>
+              </Accordion.Collapse>
             </Accordion>
- 
           </Card>
         </CardDeck>
         {this.state.showModal && (
           <ModalBookForm
-            display={this.displayModalForm}
+            flag={this.state.showModal}
             close={this.closeModalForm}
+            display={this.displayModalForm}
+            getData={this.getData}
           />
         )}
         {console.log(this.state.showModal)}

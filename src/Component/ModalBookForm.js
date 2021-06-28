@@ -3,21 +3,24 @@ import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import SweetAlert from 'react-bootstrap-sweetalert';
 class ModalBookForm extends React.Component {
+  close=()=>{
+    this.props.close();
+  }
   render() {
     return (
       <>
         <Modal
-          show={this.props.display}
-          onHide={this.props.close}
+          show={this.props.flag}
+          onHide={this.close}
         >
-          <Modal.Header closeButton  show={this.props.display}
+          <Modal.Header closeButton  show={this.props.flag}
           onHide={this.props.close}>
             <Modal.Title id="contained-modal-title-vcenter">
               Start your class
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form >
+            <Form onSubmit={this.props.getData}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label> Name</Form.Label>
                 <Form.Control
@@ -47,7 +50,7 @@ class ModalBookForm extends React.Component {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={this.props.close}
+                onClick={this.close}
               >
                 Submit
               </Button>
