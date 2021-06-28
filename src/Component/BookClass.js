@@ -47,10 +47,13 @@ class BookClass extends React.Component {
     return (
       <>
         <ColoredLine color="#39A6A3" />
+        <br/> 
         <h1 className="BookClass-title"> Book an Online Class </h1>
+        <br/>
         <p>
           Of course you can learn to be active with our short courses in Jordan
         </p>
+        <br/> <br/>
         {/* <ColoredLine color="#A3A847" /> */}
         <CardDeck style={{ height: "400px" }}>
           <Card style={{ width: "18rem" }}>

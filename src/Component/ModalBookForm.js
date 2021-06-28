@@ -1,23 +1,8 @@
 import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import SweetAlert from 'react-bootstrap-sweetalert';
 class ModalBookForm extends React.Component {
-  constructor(props){
-    super(props);
-    this.state={
-      noOFSeats:15
-    }
-
-  }
-  seatsUpdate=(e)=>{
-    this.setState=({
-      noOFSeats:this.state.noOFSeats-1
-    })
-  }
-  updateSubmit=(e)=>{
-    this.seatsUpdate(e)
-    this.props.close();
-  }
   render() {
     return (
       <>
