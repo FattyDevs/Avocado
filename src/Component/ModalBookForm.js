@@ -2,14 +2,31 @@ import React from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 class ModalBookForm extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      noOFSeats:15
+    }
+
+  }
+  seatsUpdate=(e)=>{
+    this.setState=({
+      noOFSeats:this.state.noOFSeats-1
+    })
+  }
+  updateSubmit=(e)=>{
+    this.seatsUpdate(e)
+    this.props.close();
+  }
   render() {
     return (
       <>
         <Modal
-          show={this.props.flag}
-          onHide={this.props.display}
+          show={this.props.display}
+          onHide={this.props.close}
         >
-          <Modal.Header closeButton>
+          <Modal.Header closeButton  show={this.props.display}
+          onHide={this.props.close}>
             <Modal.Title id="contained-modal-title-vcenter">
               Start your class
             </Modal.Title>
@@ -45,7 +62,7 @@ class ModalBookForm extends React.Component {
               <Button
                 variant="primary"
                 type="submit"
-                onClick={this.props.display}
+                onClick={this.props.close}
               >
                 Submit
               </Button>
