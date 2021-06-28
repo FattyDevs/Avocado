@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-import "./App.css";
-// import SportPage from "./Component/SportPage";
-import BookClass from "./Component/BookClass";
-function App() {
-  return (
-    <div className="App">
-      {/* <SportPage/> */}
-      <BookClass />
-    </div>
-  );
-=======
-
-// import './App.css';
-// import SportPage from "./Component/SportPage";
-// function App() {
-//   return (
-//     <div className="App">
-// <SportPage/>
-//     </div>
-//   );
-// }
-
 // export default App;
 import React from 'react';
 import Header from './Header';
@@ -71,8 +48,6 @@ class App extends React.Component {
       </>
     )
   }
->>>>>>> 8ca23bf63e914530f5cd970db1c563b573cccfcb
 }
 
 export default withAuth0(App);
-
