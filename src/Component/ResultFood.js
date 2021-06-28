@@ -9,10 +9,43 @@ class ResultFood extends React.Component{
         this.state={
             showIngredient:false,
             caloriesNum:0,
-            favFood:[]
+            favFood:[],
+            setIsShown:false,
+
            
         }
     }
+
+    showHover=()=>{
+        this.setState({
+            setIsShown :true
+        })
+    }
+
+    hideHover=()=>{
+        this.setState({
+            setIsShown :false
+        })
+    }
+    
+
+     changeBackground=(e)=> {
+        e.target.style.background = 'red';
+      }
+    
+
+      
+     notchangeBackground=(e)=> {
+        e.target.style.background = 'green';
+      }
+
+
+
+
+
+
+
+
     
     
     componentWillMount(){
@@ -81,7 +114,8 @@ Contact=()=> {
     render(){
         return(
             <>
-    <CardColumns>
+        
+    {/* <CardColumns>
     <Container>
           <Row>
     {this.state.favFood.map((item,idx)=>{
@@ -101,11 +135,11 @@ Contact=()=> {
 })}
   </Row>
 </Container>
-</CardColumns>
+</CardColumns> */}
                 {/* <Button onClick={this.getting} variant="outline-secondary" id="button-n2">get</Button> */}
 
     <Col>
-    <Card   style={{ width: '25rem' }} >
+    <Card   style={{ width: '21rem' ,backgroundColor:'#e0e2db',marginTop:"1rem"}} >
   <Card.Img variant="top" src={this.props.image} onClick={this.Contact}/>
   <Card.Body>
     <Card.Title>{this.props.label}</Card.Title>
@@ -120,6 +154,22 @@ Contact=()=> {
    
     </Container>
   </Card.Body>
+  </Card>
+</Col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {/* <Button  variant="primary" onClick={this.Contact}></Button> */}
   
@@ -132,11 +182,33 @@ Contact=()=> {
   })}
   <Button variant="primary" onClick={this.hideIngredientFunc}>close</Button>
   </Card.Footer>} */}
-</Card>
-</Col>
+
 
             </>
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default ResultFood;
