@@ -39,7 +39,7 @@ class InfoForm extends React.Component{
                   <Form.Control type="text" placeholder="Fav Sport" name="favSport"/>
                </Form.Group>
                 
-               <Button variant="primary" type="submit" >
+               <Button variant="success" type="submit" >
                   Save
                </Button>
              </Form>
@@ -48,7 +48,7 @@ class InfoForm extends React.Component{
              </Modal.Body>
 
                <Modal.Footer>
-                 <Button onClick={this.props.hide}>Close</Button>
+                 <Button variant="success" onClick={this.props.hide}>Close</Button>
                   </Modal.Footer>
                 </Modal>
             

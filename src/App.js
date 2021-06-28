@@ -41,7 +41,7 @@ class App extends React.Component {
 
             </Route>
            
-            <Route exact path="">
+            <Route exact path="/SportPage">
               <div className="App">
                 <SportPage />
               </div>

@@ -1,7 +1,27 @@
-a{
-  color:#fff;
-}
 
-a:hover{
-  color:darkgrey;
+
+.logo{
+  height: 9rem;
+}
+.item{
+  font-size: larger;
+  color: #7D5A50;
+
+  margin-top: 4rem;
+  margin-left: 2.5rem;
+
+}
+.item:hover{
+  color:#B6C867;
+  transform: scale(1.5); 
+}
+.brand{
+  margin-top: 4.2rem;
+  color: #7D5A50;
+}
+.div{
+  background-color: #F0EBCC;
+}
+.foot{
+  background-color: #F0EBCC;
 }
