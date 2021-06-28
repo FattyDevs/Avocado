@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ResultFood from './ResultFood';
+import Articles from './Articles';
 import { Carousel, Container, Row, Col, CardColumns,InputGroup,FormControl, Card, Button, Form, Modal } from 'react-bootstrap';
 class Food extends React.Component{
 
@@ -66,17 +67,26 @@ this.setState({
     render(){
         return(
             <>
-            <Container>
-<Row>
+             <Card  >
+               
+    <Card.Img style={{width:'100%' ,height:'50rem',opacity:"100%"}}src="https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image" />
+  <Card.ImgOverlay style={{paddingTop:'20rem',width:"80%",paddingLeft:'20rem'}}>
+  <Card.Title style={{fontSize:'3rem',fontWeight:'bold',padding:'.5rem',color:'black'}}>Search For Recipes And Food...</Card.Title>
 <Form  onSubmit ={this.searchMeal}>
-  <InputGroup className="mb-3" >
-    <Form.Control placeholder="Recipient's username" name='meal'/>
-    <Button type="submit" variant="outline-secondary" id="button-addon2">Search</Button>
+  <InputGroup style={{border:'.3rem solid green',height:'6rem'}}className="mb-3" >
+    <Form.Control placeholder="Find Recipe" style={{fontSize:'1.5rem',fontWeight:'bold'}} name='meal'/>
+    <Button style={{fontSize:'1.5rem',fontWeight:'bold',backgroundColor:'black',width:'10%'}} type="submit" variant="outline-secondary" id="button-addon2"><img src="https://img.icons8.com/ios/40/ffffff/search--v1.png"/></Button>
   </InputGroup>
   </Form>
-    <CardColumns>
-    <Container>
-          <Row>
+  </Card.ImgOverlay>
+  </Card>
+            {/* <Container>
+                
+<Row> */}
+   
+    <CardColumns style={{width:'90rem'}}>
+    <Container style={{width:'90rem'}}>
+          <Row style={{width:'90rem'}}>
     {this.state.resultOfFoodUrl.map((item)=>{
     return (
     <ResultFood
@@ -133,8 +143,9 @@ this.setState({
 </Modal>
 
     <Button variant="primary" onClick={this.openModalFilter}>Filter</Button> */}
-</Row>
-        </Container>
+{/* </Row>
+        </Container> */}
+        <Articles></Articles>
 
             </>
         )

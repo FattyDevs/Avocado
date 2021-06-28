@@ -9,10 +9,43 @@ class ResultFood extends React.Component{
         this.state={
             showIngredient:false,
             caloriesNum:0,
-            favFood:[]
+            favFood:[],
+            setIsShown:false,
+
            
         }
     }
+
+    showHover=()=>{
+        this.setState({
+            setIsShown :true
+        })
+    }
+
+    hideHover=()=>{
+        this.setState({
+            setIsShown :false
+        })
+    }
+    
+
+     changeBackground=(e)=> {
+        e.target.style.background = 'red';
+      }
+    
+
+      
+     notchangeBackground=(e)=> {
+        e.target.style.background = 'green';
+      }
+
+
+
+
+
+
+
+
     
     
     componentWillMount(){
@@ -81,7 +114,8 @@ Contact=()=> {
     render(){
         return(
             <>
-    <CardColumns>
+        
+    {/* <CardColumns>
     <Container>
           <Row>
     {this.state.favFood.map((item,idx)=>{
@@ -101,25 +135,54 @@ Contact=()=> {
 })}
   </Row>
 </Container>
-</CardColumns>
-                {/* <Button onClick={this.getting} variant="outline-secondary" id="button-n2">get</Button> */}
+</CardColumns> */}
+                {/* <Button onClick={this.getting}  id="button-n2">get</Button> */}
 
     <Col>
-    <Card   style={{ width: '25rem' }} >
-  <Card.Img variant="top" src={this.props.image} onClick={this.Contact}/>
-  <Card.Body>
-    <Card.Title>{this.props.label}</Card.Title>
+    <Card id="searchFoodCard"  >
+     
+  <Card.Img  id="image" variant="top" src={this.props.image} />
+  
+  <Card.Body id="cardBody">
+    <Card.Title class="title">{this.props.label}</Card.Title>
     <Container>
           <Row>
-<Col><Card.Text>{this.state.caloriesNum}Cal/Serving</Card.Text></Col>
-<Col><Card.Text>Serving:{this.props.yield}</Card.Text></Col>
-<Col>{this.props.mealType}</Col>
-<Col onClick={this.favDishs}> 💟 </Col>
+<Col><Card.Text class="calories">{this.state.caloriesNum}Cal/Serving</Card.Text></Col>
+<Col><Card.Text id="yield">Serving:{this.props.yield}</Card.Text></Col>
+<Col  id="mealType">{this.props.mealType}</Col>
+<Col id="favClick">
+ 
+<Button id ="buttonMore" variant="outline-secondary" onClick={this.Contact}>More..</Button>
+{/* <Button id ="buttonFav" variant="outline-secondary" onClick={this.favDishs}>
+    <img onClick={this.favDishs} id ="buttonFav" src="https://img.icons8.com/ios-glyphs/30/fa314a/filled-like.png"/> 
+    </Button> */}
+
+    <img id ="buttonFav" onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/40/fa314a/filled-like.png"/>
+    <p id="hovering"> hii 
+    </p>
+</Col>
+{/* <Col id="favClick"onClick={this.favDishs}></Col> */}
           </Row>
  
    
     </Container>
   </Card.Body>
+  </Card>
+</Col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {/* <Button  variant="primary" onClick={this.Contact}></Button> */}
   
@@ -132,11 +195,33 @@ Contact=()=> {
   })}
   <Button variant="primary" onClick={this.hideIngredientFunc}>close</Button>
   </Card.Footer>} */}
-</Card>
-</Col>
+
 
             </>
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default ResultFood;
