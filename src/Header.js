@@ -18,16 +18,16 @@ class Header extends React.Component {
         <img src={logo} alt="Logo" className="logo"/>
         <Navbar.Brand className="brand">AVOCADO</Navbar.Brand>
       <Nav.Item>
-        <Nav.Link className="item" to="/">Home</Nav.Link>
+        <Link className="link" to="/">Home</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="item" to="/SportPage">Sports</Nav.Link>
+        <Link className="link" to="/SportPage">Sports</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="item" eventKey="" >  Food </Nav.Link>
+        <Link className="link" eventKey="" >  Food </Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className="item" eventKey="" >  About Us</Nav.Link>
+        <Link className="link" eventKey="" >  About Us</Link>
       </Nav.Item>
       <Nav.Item className="item">
         {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}

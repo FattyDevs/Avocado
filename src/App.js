@@ -41,13 +41,13 @@ class App extends React.Component {
 
             </Route>
            
-            <Route exact path="/SportPage">
+            <Route path="/SportPage">
               <div className="App">
                 <SportPage />
               </div>
 
             </Route>
-            <Route exact path="">
+            <Route path="">
 
             </Route>
 
