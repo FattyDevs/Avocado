@@ -1,14 +1,3 @@
-
-// import './App.css';
-// import SportPage from "./Component/SportPage";
-// function App() {
-//   return (
-//     <div className="App">
-// <SportPage/>
-//     </div>
-//   );
-// }
-
 // export default App;
 import React from 'react';
 import Header from './Header';
@@ -62,4 +51,3 @@ class App extends React.Component {
 }
 
 export default withAuth0(App);
-
