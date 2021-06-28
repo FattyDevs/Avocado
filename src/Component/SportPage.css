@@ -1,0 +1,16 @@
+.CardDeck{
+    padding-top: 125px;
+    padding-right: 21px;
+    padding-left: 15px;
+}
+
+.CardTitle{
+    padding: 120px;
+    font-size: 28px;
+    transition: 0.3s
+}
+
+.CardTitle:hover{
+    font-size: 33px;
+    transition: 0.3s
+}
