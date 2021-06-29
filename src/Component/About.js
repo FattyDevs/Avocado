@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { AiFillGithub} from 'react-icons/ai';
+import { AiFillGithub } from 'react-icons/ai';
 import Image from 'react-bootstrap/Image';
 import Ahmad from './imgv/Ahmad.jpg';
 import Fadia from './imgv/Fadia.jpg';
@@ -8,10 +8,12 @@ import Nadeem from './imgv/Nadeem.jpg';
 import Roa from './imgv/Roa.jpg';
 import Shaheenaz from './imgv/Shahenaz.jpg';
 import Vickey from './imgv/Vickey.JPG';
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+// import Card from 'react-bootstrap/Card';
+// import CardGroup from 'react-bootstrap/CardGroup';
 import './about.css';
-
+// import Overlay from 'react-bootstrap/Overlay';
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 
 class About extends React.Component {
@@ -19,73 +21,115 @@ class About extends React.Component {
     render() {
         return (
             <>
-            <div class="auther">
-            <CardGroup className="group">
-                <Card style={{ width: '18rem' }} className="card">
-                    <Image src={Roa} roundedCircle width="120" height="120"  className="img"/>
-                    <Card.Body>
-                        <Card.Title>Roa Mustafa</Card.Title>
-                        <Card.Text>
-                            <AiFillGithub/> github.com/RoaaMustafa
-                        </Card.Text>
+            <div>
+                   
+                   
 
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }} className="card">
-                <Image src={Vickey} roundedCircle width="120" height="120" className="img" />
-                    <Card.Body>
-                        <Card.Title>Victoria Fares</Card.Title>
-                        <Card.Text>
-                        <AiFillGithub/> github.com/Victoria-FZ-eng
-                        </Card.Text>
 
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }} className="card">
-                <Image src={Ahmad} roundedCircle width="120" height="120"  className="img"/>
-                    <Card.Body>
-                        <Card.Title>Ahmad Abu Sailik</Card.Title>
-                        <Card.Text>
-                        <AiFillGithub/> github.com/AhmadSailik
-                        </Card.Text>
+                   <OverlayTrigger
+                     className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Roa Mustafa`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong> <AiFillGithub /> github.com/RoaaMustafa</strong> 
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image src={Roa} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
 
-                    </Card.Body>
-                </Card>
-               
-                </CardGroup>
-                <CardGroup className="group">
-               
-                <Card style={{ width: '18rem' }} className="card">
-                <Image src={Nadeem} roundedCircle width="120" height="120" className="img"/>
-                    <Card.Body>
-                        <Card.Title>Nadeem Mazahreh</Card.Title>
-                        <Card.Text>
-                        <AiFillGithub/> github.com/Nadeemmazahreh
-                        </Card.Text>
+                   <OverlayTrigger
+                   className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Ahmad Abu Sailik`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong> <AiFillGithub /> github.com/AhmadSailik</strong> 
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image src={Ahmad} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
 
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }} className="card">
-                    <Image src={Shaheenaz} roundedCircle width="120" height="120"  className="img"/>
-                    <Card.Body>
-                        <Card.Title>Shaheenaz Zuwayyed</Card.Title>
-                        <Card.Text>
-                        <AiFillGithub/> github.com/shaheenaz
-                        </Card.Text>
+                   <OverlayTrigger
+                   className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Victoria Fares`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong> <AiFillGithub /> github.com/Victoria-FZ-eng</strong> 
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image src={Vickey} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
 
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }} className="card">
-                <Image src={Fadia} roundedCircle width="120" height="120" className="img"/>
-                    <Card.Body>
-                        <Card.Title>Fadia Al-dasouqi</Card.Title>
-                        <Card.Text>
-                        <AiFillGithub/> github.com/Al-dasouqi
-                        </Card.Text>
+                   <OverlayTrigger
+                   className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Nadeem Mazahreh`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong>  <AiFillGithub /> github.com/Nadeemmazahreh</strong> 
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image src={Nadeem} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
 
-                    </Card.Body>
-                </Card>
-                </CardGroup></div>
+                   <OverlayTrigger
+                   className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Shaheenaz Zuwayyed`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong> <AiFillGithub /> github.com/shaheenaz</strong>
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image  src={Shaheenaz} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
+
+                   <OverlayTrigger
+                   className="card"
+                       trigger="click"
+                       placement="bottom"
+                       overlay={
+                           <Popover id={`popover-positioned-bottom`}>
+                               <Popover.Title as="h3">{`Fadia Al-dasouqi`}</Popover.Title>
+                               <Popover.Content>
+                                   <strong><AiFillGithub /> github.com/Al-dasouqi</strong> 
+                               </Popover.Content>
+                           </Popover>
+                       }
+                   >
+                       
+                       <Image src={Fadia} roundedCircle width="120" height="120" className="img"  />
+                   </OverlayTrigger>
+
+               </div>
+
 
 
                

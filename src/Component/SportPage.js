@@ -13,6 +13,7 @@ import IndoorWorkouts from "./IndoorWorkouts";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
+import BookClass from "./BookClass";
 
 
 class SportPage extends React.Component {
@@ -68,6 +69,11 @@ class SportPage extends React.Component {
   render() {
     return (
       <>
+      <br/>
+
+      <h3 className="sport-qoute">"Good, Better, Best. Never let it rest. <br/> 
+      Until your Good is Better, and your Better is your Best. " </h3>
+
         <Router>
           <Switch>
             <Route exact path="/SportPage">
@@ -112,7 +118,7 @@ class SportPage extends React.Component {
             </Route>
           </Switch>
         </Router>
-
+       <BookClass/>
       </>
     )
       ;

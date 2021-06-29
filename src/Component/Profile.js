@@ -32,19 +32,16 @@ class Profile extends Component {
     }
 
     checkUserAuth = async () => {
-
         const dataURL = await axios.get(`http://localhost:3010/`);
         const data = dataURL.data;
         console.log(data);
         this.setState({
             users: data,
         })
-
         const { user } = this.props.auth0;
         const email = user.email;
-        let x = this.state.users.filter((user) => { return (email === user.email) });
+        let x = this.state.users.filter((user) => {return(email === user.email) });
         console.log(x);
-
         if (x.length !== 0) {
             this.setState({
                 show: false,
