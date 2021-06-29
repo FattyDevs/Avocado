@@ -40,7 +40,9 @@ class ResultFood extends React.Component{
       }
 
 
-
+       getRandomArbitrary=(min, max)=> {
+        return Math.floor(Math.random() * (max - min) + min) 
+      }
 
 
 
@@ -141,31 +143,35 @@ Contact=()=> {
     <Col>
     <Card id="searchFoodCard"  >
      
-  <Card.Img  id="image" variant="top" src={this.props.image} />
+  <Card.Img  id="image" variant="top" src={this.props.image} onClick={this.Contact} />
   
   <Card.Body id="cardBody">
+
     <Card.Title class="title">{this.props.label}</Card.Title>
-    <Container>
-          <Row>
-<Col><Card.Text class="calories">{this.state.caloriesNum}Cal/Serving</Card.Text></Col>
-<Col><Card.Text id="yield">Serving:{this.props.yield}</Card.Text></Col>
-<Col  id="mealType">{this.props.mealType}</Col>
-<Col id="favClick">
- 
-<Button id ="buttonMore" variant="outline-secondary" onClick={this.Contact}>More..</Button>
+    <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
+    {/* <Container> */}
+          {/* <Row> */}
+<Card.Text class="calories">{this.state.caloriesNum}<img src="https://img.icons8.com/emoji/33/000000/fire.png"/></Card.Text>
+{/* <Col><Card.Text id="yield">Serving:{this.props.yield}</Card.Text></Col> */}
+{/* <Col  id="mealType">{this.props.mealType}</Col> */}
+
+ <Card.Text>
+     <p> <img src="https://img.icons8.com/material-outlined/20/000000/visible--v1.png"/>{this. getRandomArbitrary(10,30)} <img src="https://img.icons8.com/ios-glyphs/20/000000/filled-like.png"/>{this. getRandomArbitrary(0,10)} <img id ="buttonFav" data-toggle="tooltip" data-placement="right" title="Add To Favorite"onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/25/fa314a/filled-like.png"/> </p> </Card.Text>
+{/* <Button id ="buttonMore" variant="outline-secondary" onClick={this.Contact}>More..</Button> */}
 {/* <Button id ="buttonFav" variant="outline-secondary" onClick={this.favDishs}>
     <img onClick={this.favDishs} id ="buttonFav" src="https://img.icons8.com/ios-glyphs/30/fa314a/filled-like.png"/> 
     </Button> */}
-
-    <img id ="buttonFav" onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/40/fa314a/filled-like.png"/>
+{/* <Card.Text>
+    
+    <img id ="buttonFav" data-toggle="tooltip" data-placement="right" title="Add To Favorite"onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/40/fa314a/filled-like.png"/>
     <p id="hovering"> hii 
     </p>
-</Col>
+    </Card.Text> */}
 {/* <Col id="favClick"onClick={this.favDishs}></Col> */}
-          </Row>
+          {/* </Row> */}
  
    
-    </Container>
+    {/* </Container> */}
   </Card.Body>
   </Card>
 </Col>
