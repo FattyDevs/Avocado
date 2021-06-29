@@ -1,0 +1,31 @@
+.image {
+    width: 300px;
+    height: 400px;
+}
+
+.text-mutedOutdoor{
+    height: 360px;
+    background-color: rgba(50, 90, 40, 1);
+    color: rgb(223, 222, 222) !important;
+}
+
+.text-centerOutdoor{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+.containerOutdoor{
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-right: 65px;
+
+}
+
+
+.cardColums {
+    margin: 0px;
+    padding: 0px;
+}
