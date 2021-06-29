@@ -68,7 +68,7 @@ class SportPage extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="sport-Page">
       <br/>
 
       <h3 className="sport-qoute">"Good, Better, Best. Never let it rest. <br/> 
@@ -116,10 +116,10 @@ class SportPage extends React.Component {
                   displayIn={this.state.InDoorData}
                 />}
             </Route>
+            <BookClass/>
           </Switch>
         </Router>
-       <BookClass/>
-      </>
+      </div>
     )
       ;
   }
