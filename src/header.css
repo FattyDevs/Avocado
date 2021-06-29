@@ -1,5 +1,7 @@
 
-
+.nav{
+  background-color: rgba(50, 90, 40, 1);
+}
 .logo{
   height: 9rem;
 }
@@ -28,6 +30,7 @@
 }
 .logo{
   height: 9rem;
+  padding-left: 30 px;
 }
 .item{
   font-size: larger;
@@ -59,21 +62,22 @@
 
 .par{
   background-color: rgba(50, 90, 40, 1) ;
-  text-align: center;
+  text-align: left;
 }
 
 .link{
-  font-size: larger;
-  color: #7D5A50;
+  color: white;
   text-decoration: none;
-
-  margin-top: 4rem;
-  margin-left: 2.5rem;
-
+  padding: 0.5rem 1rem;
+  background: rgba(50, 90, 40, 1);
+  transition: all 0.2s ease-out;
 }
+
 .link:hover{
-  color:#B6C867;
-  transform: scale(1.5); 
+  color: seashell;
+  transition: all 0.2s ease-out;
+  box-sizing: border-box;
+  color: chartreuse;
 }
 
 .btn{
@@ -87,10 +91,45 @@
 }
 
 .itm{
-  margin-top: 4rem;
-  margin-left: 2.5rem;
+  color: white;
+  text-decoration: none;
+  padding-top: 30px;
+  padding-left: 40px;
+  background: rgba(50, 90, 40, 1);
+  transition: all 0.2s ease-out;
 }
 .itm:hover{
-  color:#B6C867;
-  transform: scale(1.5);
+   color: seashell;
+   transition: all 0.2s ease-out;
+   box-sizing: border-box;
+   color: chartreuse;
+   text-decoration: none;
+}
+
+.logoo {
+  height: 6rem;
+  background-color:rgba(50, 90, 40, 1) ;
+  justify-self: start;
+  padding-left: 20px;
+}
+
+.navbar-logo {
+  color: #fff;
+  background: rgba(50, 90, 40, 1);
+  justify-self: start;
+  /* padding-left: 5px; */
+  padding-top: 15px;
+  padding-right: 200px;
+  cursor: pointer;
+  /* font-family: "Futura-CondensedExtraBold", sans-serif; */
+  font-size: 28px;
+  font-family: 'Caveat', cursive;
+font-family: 'Pacifico', cursive;
+  /* font-family: 'Caveat', cursive; */
+  /* font-family: 'Caveat', cursive; */
+  /* height: 5rem; */
+}
+
+.nav-bar-group{
+  padding-left: 400px;
 }
