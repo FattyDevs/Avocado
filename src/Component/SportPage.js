@@ -13,7 +13,7 @@ import IndoorWorkouts from "./IndoorWorkouts";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
-import BookClass from "./BookClass";
+import BookClass from "./BookClass.js";
 
 
 class SportPage extends React.Component {
@@ -88,7 +88,6 @@ class SportPage extends React.Component {
                   </Card.ImgOverlay>
                   </Link>
                 </Card>
-
                 <Card onClick={(e) => { this.displayOutdoorWorkouts(e) }} className ="CardRight"> 
                 <Link to="/SportPage/outdoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image4} alt="Card image" style={{ height:"320px"}}/>
@@ -100,7 +99,7 @@ class SportPage extends React.Component {
                   </Link>
                 </Card>
               </CardDeck>
-            </Route>
+            
 
             <Route path="/SportPage/outdoor">
               {/* <Link to="/outdoor">outdoor</Link> */}
@@ -117,6 +116,7 @@ class SportPage extends React.Component {
                 />}
             </Route>
             <BookClass/>
+            </Route>
           </Switch>
         </Router>
       </div>
