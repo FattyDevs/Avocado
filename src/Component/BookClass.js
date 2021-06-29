@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { withAuth0 } from '@auth0/auth0-react';
 import ChoosenClass from "./ChooesnClass";
-
+import AlertModal from "./AlertModal";
 
 import { FcClock, FcCalendar, FcMoneyTransfer } from "react-icons/fc";
 import {
@@ -33,16 +33,17 @@ class BookClass extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      data:[]
+      data:"",
+      showAlert:false
       // closeModal: false,
     };
   }
-  displayModalForm = () => {
- this.setState({
-   showModal:true
- })
-    console.log("show is ", this.state.showModal);
-  };
+//   displayModalForm = () => {
+//  this.setState({
+//    showModal:true
+//  })
+//     console.log("show is ", this.state.showModal);
+//   };
   closeModalForm = () => {
     // e.preventDefault();
   this.setState({
@@ -50,25 +51,26 @@ class BookClass extends React.Component {
   })
     console.log("close is ", this.state.showModal);
   };
-  getData=(event)=>{
-    event.preventDefault();
-    // const { user } = this.props.auth0;
-    const classInfo = {
-      name: event.target.name.value,
-      email:event.target.email.value,
-      clsses:event.target.class.value
-    }
-    console.log(classInfo);
-    let url=`http://localhost:3010/sportClass`;
-    axios.post(url,classInfo)
-    .then((result)=>{
-      this.setState({
-        data:result.data,
+  // getData=(event)=>{
+  //   event.preventDefault();
+    
+  //   // const { user } = this.props.auth0;
+  //   // const classInfo = {
+  //   //   name: event.target.name.value,
+  //   //   email:event.target.email.value,
+  //   //   clsses:event.target.class.value
+  //   // }
+  //   // console.log(classInfo);
+  //   // let url=`http://localhost:3010/sportClass`;
+  //   // axios.post(url,classInfo)
+  //   // .then((result)=>{
+  //   //   this.setState({
+  //   //     data:result.data,
         
-      })
-      console.log(this.state.data);
-    });
-  }
+  //   //   })
+  //   //   console.log(this.state.data);
+  //   // });
+  // }
   deletFunction = async (index) => {
     const ownerEmail = {
       email: 'asilik!993@gmail.com'
@@ -78,7 +80,46 @@ class BookClass extends React.Component {
         data: newClassAfterDelete.data
     })
   }
-  render() {
+  checkAthClass =async (e)=>{
+    e.preventDefault();
+    if (this.props.auth0.isAuthenticated ){
+      this.setState({
+        showModal: true 
+      }
+      )
+      // console.log(e.target.value);
+      // const clss =e.target.value;
+      const { user } = this.props.auth0;
+      const infoSport ={
+        clss:e.target.value,
+        email:user.email,
+      }
+      console.log(infoSport);
+      let url= await axios.post(`http://localhost:3010/newClass`,infoSport);
+console.log(url);
+    // axios.post(url,infoSport)
+    // .then((result)=>{
+    //   this.setState({
+    //     data:result.data,
+        
+    //   })
+    //   console.log(this.state.data);
+    // });
+
+    }
+  else {
+    this.setState({
+      showAlert:true,
+    })
+
+    }
+    }
+    hideAlert=()=>{
+this.setState({
+  showAlert:false,
+})
+    }
+  render(){
     return (
       <>
         <ColoredLine color="#39A6A3" />
@@ -89,7 +130,6 @@ class BookClass extends React.Component {
           Of course you can learn to be active with our short courses in Jordan
         </p>
         <br /> <br />
-        {/* <ColoredLine color="#A3A847" /> */}
         <CardDeck style={{ height: "400px" }}>
           <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" src={Image1} style={{ height: "600px" }} />
@@ -101,7 +141,7 @@ class BookClass extends React.Component {
                 juggle the two, why not merge them together?
               </Card.Text>
               <Card.Body>
-                <Button onClick={() => this.setState({ showModal: true })}>
+                <Button onClick={this.checkAthClass} name="Personal with Family" value="Personal with Family">
                   <FcCalendar /> Book Now
                 </Button>
               </Card.Body>
@@ -137,7 +177,7 @@ class BookClass extends React.Component {
                 are after new ways to build up your technique?
               </Card.Text>
               <Card.Body>
-                <Button onClick={() => this.setState({ showModal: true })}>
+                <Button onClick={this.checkAthClass} name="Fit Beginners" value="Fit Beginners">
                   <FcCalendar /> Book Now
                 </Button>
               </Card.Body>
@@ -173,7 +213,7 @@ class BookClass extends React.Component {
                 coach with confidence.
               </Card.Text>
               <Card.Body>
-                <Button onClick={() => this.setState({ showModal: true })}>
+                <Button onClick={this.checkAthClass} name="Fit Master" value="Fit Master">
                   {" "}
                   <FcCalendar /> Book Now
                 </Button>
@@ -202,16 +242,11 @@ class BookClass extends React.Component {
             </Accordion>
           </Card>
         </CardDeck>
-        {/* {this.state.showModal && ( */}
           <ModalBookForm
             flag={this.state.showModal}
             close={this.closeModalForm}
-            display={this.displayModalForm}
-            getData={this.getData}
           />
-        {/* // )}
-        // {console.log(this.state.showModal)} */}
-{
+{/* {
   this.state.data.map((item,idx)=>{
     return(
       <ChoosenClass
@@ -220,11 +255,15 @@ class BookClass extends React.Component {
       class={item.clsses}
       idx={idx}
       deleteClass={this.deletFunction}
+      
       />
     )
   })
-}
-  
+} */}
+  <AlertModal
+  showAlert={this.state.showAlert}
+  hide={this.hideAlert}
+  />
       </>
     );
   }
