@@ -13,29 +13,35 @@ class Header extends React.Component {
   
   render() {
     return(
-      <div className="div">
-      <Nav className="text-center mt-4 mb-4" >
+      
+      <Nav  className="div">
         <img src={logo} alt="Logo" className="logo"/>
         <Navbar.Brand className="brand">AVOCADO</Navbar.Brand>
-      <Nav.Item>
+      <Nav.Item className="itm">
         <Link className="link" to="/">Home</Link>
       </Nav.Item>
-      <Nav.Item>
+
+      {this.props.auth0.isAuthenticated ?  
+      <Nav.Item className="itm">
+        <Link className="link" to="/Profile">Profile</Link>
+      </Nav.Item> : <></> }
+     
+      <Nav.Item className="itm">
         <Link className="link" to="/SportPage">Sports</Link>
       </Nav.Item>
-      <Nav.Item>
-        <Link className="link" eventKey="" >  Food </Link>
+      <Nav.Item className="itm">
+        <Link className="link"  >  Food </Link>
       </Nav.Item>
-      <Nav.Item>
-        <Link className="link" eventKey="" >  About Us</Link>
+      <Nav.Item className="itm">
+        <Link className="link" to="/About" >  About Us</Link>
       </Nav.Item>
-      <Nav.Item className="item">
+      <Nav.Item className="btn">
         {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}
       </Nav.Item>
 
       
     </Nav>
-      </div>
+      
     )
   }
 }
