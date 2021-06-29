@@ -140,7 +140,7 @@ Contact=()=> {
 </CardColumns> */}
                 {/* <Button onClick={this.getting}  id="button-n2">get</Button> */}
 
-    <Col style={{width:'80px'}}>
+   
     <Card id="searchFoodCard"  >
      
   <Card.Img  id="image" variant="top" src={this.props.image} onClick={this.Contact} />
@@ -174,7 +174,7 @@ Contact=()=> {
     {/* </Container> */}
   </Card.Body>
   </Card>
-</Col>
+
 
 
 

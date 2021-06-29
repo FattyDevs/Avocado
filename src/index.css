@@ -15,10 +15,9 @@ code {
 
 
 #searchFoodCard  {
-  width: 21rem ;
+  /* width:160px ; */
   background-color:rgb(252, 244, 244);
-  margin-top:1rem;
-
+  /* margin-top:1rem; */
   box-shadow: 0 4px 8px 0 rgba(102, 204, 0, 0.82);
   transition: 0.3s;
  
@@ -28,7 +27,7 @@ code {
 .title{
   position: absolute;
   top: 0;
-  bottom: 380px;
+  bottom: 20rem;
   left: 0;
   right: 0;
   background: rgba(102, 204, 0, 0.82);
@@ -37,7 +36,7 @@ code {
   opacity: 0;
   font-size: 20px;
 text-align: center;
-padding: 10px;
+padding: 1rem;
 font-weight: bolder;
   /* transition effect. not necessary */
   transition: opacity .2s, visibility .2s;
@@ -46,8 +45,8 @@ font-weight: bolder;
 #deatalis{
 
   position: absolute;
-  top: 80px;
-  bottom: 340px;
+  top:5rem;
+  bottom: 17.5rem;
   left: 0;
   right: 0;
   background: rgba(252, 253, 253);
@@ -89,8 +88,8 @@ font-weight: bolder;
 .calories{
 
   position: absolute;
-  top: 350px;
-  bottom: 63px;
+  top: 19.5rem;
+  bottom: 2rem;
   left: 0;
   right: 0;
   background: rgba(102, 204, 0, 0.82);
@@ -177,6 +176,6 @@ font-weight: bolder;
 }
 
 
-/* .captions1{
+.captions1{
   color:rgba(102, 204, 0, 0.82)
-} */
+}
