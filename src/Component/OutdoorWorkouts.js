@@ -11,18 +11,18 @@ class OutdoorWorkouts extends React.Component {
     return (
       <>
       <img src={Image7} style={{ width: '100%'}} className='imageHeader'/>
-      <div className="container2">
-        <CardColumns className="cardColums">
+      <div className="containerOutdoor">
+        <CardColumns className="cardColumsOutdoor">
           {this.props.displayOut.map((item, indx) => {
              if (item.description != null && item.icon != null){
               return (
                 <div>
-                <Card className="text-center2" key={indx}>
+                <Card className="text-centerOutdoor" key={indx}>
                   <Card.Body>
                     <Card.Title>{item.name}</Card.Title>
                     <Card.Img src={item.icon} />
                   </Card.Body>
-                  <Card.Footer className="text-muted2">{item.description}</Card.Footer>
+                  <Card.Footer className="text-mutedOutdoor">{item.description}</Card.Footer>
                 </Card>
               </div>
             )

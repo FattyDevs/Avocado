@@ -4,7 +4,7 @@
 }
 
 .text-muted{
-    width: 410px;
+    width: 380px;
     height: 300px;
     background-color: rgba(50, 90, 40, 1);
     color: rgb(223, 222, 222) !important;
@@ -33,7 +33,7 @@
     position: absolute;
     margin: 0;
     position: absolute;
-    top: 700px;
+    top: 725px;
     left: 10px
 }
 

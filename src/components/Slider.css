@@ -1,0 +1,7 @@
+.slider {
+    width: 100%;
+    /* height: ; */
+    margin: auto;
+    /* transition-duration: 8s; */
+    transition: 10s;
+  }

@@ -1,7 +1,7 @@
 
 // export default App;
 import React from 'react';
-import Header from './Header';
+import Header from './components/Navbar';
 import Footer from './Footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './Component/HomePage';
