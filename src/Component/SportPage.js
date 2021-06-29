@@ -104,7 +104,6 @@ class SportPage extends React.Component {
 
             <Route path="/SportPage/outdoor">
               {/* <Link to="/outdoor">outdoor</Link> */}
-              <h1>Hello in outdoor</h1>
               {this.state.showCardOutdoor &&
                 <OutdoorWorkouts
                   displayOut={this.state.outdoorData}
@@ -112,7 +111,6 @@ class SportPage extends React.Component {
             </Route>
 
             <Route path="/SportPage/indoor" >
-              <h1>Hello in indoor</h1>
               {this.state.showCardIndoor &&
                 <IndoorWorkouts
                   displayIn={this.state.InDoorData}

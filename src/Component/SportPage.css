@@ -2,9 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Amiri:ital,wght@1,400;1,700&display=swap');
 
 .CardDeck{
-    padding-top: 125px;
-    padding-right: 21px;
-    padding-left: 15px;
+    margin-top: 200px;
+
 }
 
 .CardTitle{
