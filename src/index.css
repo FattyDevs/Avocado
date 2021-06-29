@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -15,9 +16,10 @@ code {
 
 #searchFoodCard  {
   width: 21rem ;
-  background-color:#e0e2db;
+  background-color:rgb(252, 244, 244);
   margin-top:1rem;
-
+  box-shadow: 0 4px 8px 0 rgba(102, 204, 0, 0.82);
+  transition: 0.3s;
  
   
 }
@@ -25,22 +27,44 @@ code {
 .title{
   position: absolute;
   top: 0;
-  bottom: 18rem;
+  bottom: 20rem;
   left: 0;
   right: 0;
-  background: rgba(180, 184, 187, 0.82);
-  color: rgb(48, 45, 45);
+  background: rgba(102, 204, 0, 0.82);
+  color: rgb(252, 244, 244);
   visibility: hidden;
   opacity: 0;
   font-size: 20px;
 text-align: center;
-padding: 1.5rem;
+padding: 1rem;
 font-weight: bolder;
   /* transition effect. not necessary */
   transition: opacity .2s, visibility .2s;
 }
 
+#deatalis{
 
+  position: absolute;
+  top:5rem;
+  bottom: 17.5rem;
+  left: 0;
+  right: 0;
+  background: rgba(252, 253, 253);
+  color: rgb(48, 45, 45);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 15px;
+text-align: center;
+padding: 0;
+font-weight: bolder;
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+
+
+
+
+
+}
 
 
 
@@ -49,27 +73,32 @@ font-weight: bolder;
   opacity: 1;
 }
 
-
-
-
-#searchFoodCard :hover   #favClick{
+#searchFoodCard :hover #deatalis {
   visibility: visible;
   opacity: 1;
 }
 
 
-#favClick{
+#searchFoodCard :hover   .calories{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.calories{
 
   position: absolute;
-  top: 15rem;
-  bottom: 6rem;
+  top: 19.5rem;
+  bottom: 2rem;
   left: 0;
   right: 0;
-  background: rgba(180, 184, 187, 0.82);
-  color:black;
+  background: rgba(102, 204, 0, 0.82);
+  color:rgb(252, 244, 244);
   visibility: hidden;
   opacity: 0;
-  font-size: 17px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
 
 
   /* transition effect. not necessary */
@@ -77,32 +106,76 @@ font-weight: bolder;
 }
 
 
-#buttonMore{
+/* #buttonMore{
   border: 1px black solid;
   margin-top: 2rem;
   background-color: chartreuse;
   margin-left: 5rem;
   top:0;
-}
+} */
 
-#buttonFav{
-  margin-top: 2rem;
+/* .calories{
+  margin-top: 0;
 
-  margin-left: 7rem;
-}
+  margin-left: 0rem;
+} */
 #hovering{
   display: none;
   background-color: coral;
 }
+/* }
 #buttonFav :hover  #hovering{
   display: block;
-}
+} */
 
 
 #cardBody{
-  height: 6rem;
+  height: 3rem;
 }
 
 #image{
   height:22rem;
 }
+
+#buttonFav{
+  float: right;
+}
+
+
+
+/* #infoImg1{
+  width:80rem;
+  height:43rem;
+  opacity:100%
+} */
+
+#infoTitle1{
+  font-size:3rem;
+  text-align:center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+#overLayIMG{
+  /* opacity: .5; */
+    width:100%;
+  height:35rem;
+}
+
+#textInfo{
+  font-size: 3rem;
+}
+
+#moreInfo{
+  font-size: 1.5rem;
+}
+.d-blockw-100{
+  height: 40rem;
+  width: 100%;
+
+}
+
+
+/* .captions1{
+  color:rgba(102, 204, 0, 0.82)
+} */

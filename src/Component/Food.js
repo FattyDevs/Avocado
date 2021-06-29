@@ -73,9 +73,9 @@ this.setState({
   <Card.ImgOverlay style={{paddingTop:'20rem',width:"80%",paddingLeft:'20rem'}}>
   <Card.Title style={{fontSize:'3rem',fontWeight:'bold',padding:'.5rem',color:'black'}}>Search For Recipes And Food...</Card.Title>
 <Form  onSubmit ={this.searchMeal}>
-  <InputGroup style={{border:'.3rem solid green',height:'6rem'}}className="mb-3" >
+  <InputGroup style={{border:'.3rem solid rgba(102, 204, 0, 0.82) ',height:'6rem'}}className="mb-3" >
     <Form.Control placeholder="Find Recipe" style={{fontSize:'1.5rem',fontWeight:'bold'}} name='meal'/>
-    <Button style={{fontSize:'1.5rem',fontWeight:'bold',backgroundColor:'black',width:'10%'}} type="submit" variant="outline-secondary" id="button-addon2"><img src="https://img.icons8.com/ios/40/ffffff/search--v1.png"/></Button>
+    <Button style={{fontSize:'1.5rem',fontWeight:'bold',backgroundColor:'rgba(96,96,96,0.9)',width:'10%'}} type="submit" variant="outline-secondary" id="button-addon2"><img src="https://img.icons8.com/ios/40/ffffff/search--v1.png"/></Button>
   </InputGroup>
   </Form>
   </Card.ImgOverlay>
