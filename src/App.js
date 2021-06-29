@@ -39,7 +39,10 @@ class App extends React.Component {
             </Route>
 
             <Route path="/Food">
+             
               <Food />
+              
+              
             </Route>
 
             <Route path="/About">

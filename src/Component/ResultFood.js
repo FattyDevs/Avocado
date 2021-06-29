@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import FavDish from './FavDish';
+import ResultFoodcss from './ResultFood.css'
 import { Carousel, Container, Row, Col, CardColumns, Card, Button, Form, Modal } from 'react-bootstrap';
 
 class ResultFood extends React.Component{
