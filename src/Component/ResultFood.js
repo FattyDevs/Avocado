@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import FavDish from './FavDish';
+import { withAuth0 } from '@auth0/auth0-react';
 import { Carousel, Container, Row, Col, CardColumns, Card, Button, Form, Modal } from 'react-bootstrap';
 
 class ResultFood extends React.Component{
@@ -59,9 +60,9 @@ class ResultFood extends React.Component{
     }
         
     favDishs= async ()=>{
-        
+        const { user } = this.props.auth0;
         const AddFood = {
-            email:'asailik1993@gmail.com',
+            email:user.email,
             label:this.props.label,
             image:this.props.image,
             url:this.props.url,
@@ -69,9 +70,9 @@ class ResultFood extends React.Component{
             calories:this.props.calories,
             mealType:this.props.mealType,
         }
-        // console.log(AddFood) 
+        console.log(AddFood) 
         const favFood= await axios.post(`http://localhost:3010/addFood`,AddFood)
-
+        // console.log(AddFood.data)
         this.setState({
             favFood:favFood.data
         })
@@ -79,16 +80,7 @@ class ResultFood extends React.Component{
     
 
     }
-    deletFunction = async (index) => {
-        
-        const ownerEmail = {
-          email: 'asilik!993@gmail.com'
-        }
-        let newFavAfterdelet = await axios.delete(`http://localhost:3010/deleteFood/${index}`, { params: ownerEmail })
-        this.setState({
-            favFood: newFavAfterdelet.data
-        })
-      }
+   
 
 
 
@@ -116,8 +108,8 @@ Contact=()=> {
     render(){
         return(
             <>
-        
-    {/* <CardColumns>
+            
+ {/* <CardColumns>
     <Container>
           <Row>
     {this.state.favFood.map((item,idx)=>{
@@ -138,6 +130,8 @@ Contact=()=> {
   </Row>
 </Container>
 </CardColumns> */}
+        
+   
                 {/* <Button onClick={this.getting}  id="button-n2">get</Button> */}
 
    
@@ -174,7 +168,6 @@ Contact=()=> {
     {/* </Container> */}
   </Card.Body>
   </Card>
-
 
 
 
@@ -230,4 +223,4 @@ Contact=()=> {
 
 
 
-export default ResultFood;
+export default withAuth0(ResultFood);
