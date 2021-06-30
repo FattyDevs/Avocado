@@ -30,7 +30,7 @@ class Header extends React.Component {
         <Link className="link" to="/SportPage">Sports</Link>
       </Nav.Item>
       <Nav.Item className="itm">
-        <Link className="link" to="/Food"  >  Food </Link>
+        <Link className="link" to="/Food">  Food </Link>
       </Nav.Item>
       <Nav.Item className="itm">
         <Link className="link" to="/About" >  About Us</Link>

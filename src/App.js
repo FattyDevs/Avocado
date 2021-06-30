@@ -7,9 +7,9 @@ import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './Component/HomePage.js';
 import './App.css';
 import SportPage from "./Component/SportPage.js";
-import Profile from './Component/Profile.js';
+import Profile from './Component/Profile';
 import About from './Component/About.js';
-import Food from './Component/Food.js'
+import Food from './Component/Food'
 import {
   BrowserRouter as Router,
   Switch,
