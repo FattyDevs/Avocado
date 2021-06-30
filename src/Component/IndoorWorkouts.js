@@ -29,7 +29,7 @@ render(){
                     {item.description}
                     <div className='button'>
                       <a href={item.link} target="_blank"> 
-                        <Button variant="outline-warning">
+                        <Button variant="outline-warning" className='ButtonWorkout'>
                           More Info
                         </Button>
                       </a>

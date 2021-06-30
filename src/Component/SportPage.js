@@ -13,7 +13,7 @@ import IndoorWorkouts from "./IndoorWorkouts";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
-import BookClass from "./BookClass.js";
+import BookClass from "./BookClass";
 
 
 class SportPage extends React.Component {
@@ -68,7 +68,8 @@ class SportPage extends React.Component {
 
   render() {
     return (
-      <div className="sport-Page">
+      // <div className="sport-Page">
+      <>
       <br/>
 
       <h3 className="sport-qoute">"Good, Better, Best. Never let it rest. <br/> 
@@ -92,13 +93,15 @@ class SportPage extends React.Component {
                 <Link to="/SportPage/outdoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image4} alt="Card image" style={{ height:"320px"}}/>
                   <Card.ImgOverlay>
-                    <Card.Title className="CardTitle" style={{ padding: "120px"}}>
+                    <Card.Title className="CardTitle">
                       Outdoor Workouts
                     </Card.Title>
                   </Card.ImgOverlay>
                   </Link>
                 </Card>
               </CardDeck>
+              <BookClass/>
+            </Route>
             
 
             <Route path="/SportPage/outdoor">
@@ -115,11 +118,11 @@ class SportPage extends React.Component {
                   displayIn={this.state.InDoorData}
                 />}
             </Route>
-            <BookClass/>
-            </Route>
+            
           </Switch>
         </Router>
-      </div>
+      {/* // </div> */}
+      </>
     )
       ;
   }

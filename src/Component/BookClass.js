@@ -21,6 +21,8 @@ import Image1 from "./BookClass-Images/with-family.jpg";
 import Image2 from "./BookClass-Images/begginers.jpg";
 import Image3 from "./BookClass-Images/master.jpg";
 import ModalBookForm from "./ModalBookForm";
+import image8 from './Sport-Images/Image8.jpg'
+
 const ColoredLine = ({ color }) => (
   <hr
     style={{
@@ -128,7 +130,7 @@ this.setState({
         <br />
         <h1 className="BookClass-title"> Book an Online Class </h1>
         <br />
-        <p>
+        <p className='Para2' style={{ textAlign: "center",}}>
           Of course you can learn to be active with our short courses in Jordan
         </p>
         <br /> <br />
@@ -244,6 +246,7 @@ this.setState({
             </Accordion>
           </Card>
         </CardDeck>
+        {/* <img src={image8} className='footerImage'/> */}
           <ModalBookForm
             flag={this.state.showModal}
             close={this.closeModalForm}
