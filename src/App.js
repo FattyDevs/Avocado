@@ -4,17 +4,13 @@ import React from 'react';
 import Header from './components/Navbar';
 import Footer from './Footer';
 import { withAuth0 } from '@auth0/auth0-react';
-import HomePage from './Component/HomePage';
+import HomePage from './Component/HomePage.js';
 import './App.css';
-import SportPage from "./Component/SportPage";
-import Profile from './Component/Profile';
+import SportPage from "./Component/SportPage.js";
+import Profile from './Component/Profile.js';
 import About from './Component/About.js';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import Food from './Component/Food.js';
+import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
 
 
 class App extends React.Component {
@@ -42,6 +38,10 @@ class App extends React.Component {
               <HomePage />
             </Route>
 
+            <Route path="/Food">
+              <Food />
+            </Route>
+
             <Route path="/About">
               <About />
             </Route>
@@ -49,7 +49,7 @@ class App extends React.Component {
               {this.props.auth0.isAuthenticated ? <Profile /> : <HomePage />} 
               <Profile />
             </Route>
-
+           
 
           </Switch>
           <Footer className='footerMain' />

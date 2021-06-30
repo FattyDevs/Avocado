@@ -9,6 +9,7 @@ import LogoutButton from './LogoutButton.js';
 import Nav from 'react-bootstrap/Nav';
 import logo from "./Avocado_logo-removebg-preview.png";
 
+
 class Header extends React.Component {
   
   render() {
@@ -31,7 +32,7 @@ class Header extends React.Component {
           <Link className="link" to="/SportPage">Exercise</Link>
         </Nav.Item>
         <Nav.Item className="itm">
-          <Link className="link"  > Nutrition </Link>
+          <Link className="link" to="/Food" > Nutrition </Link>
         </Nav.Item>
         <Nav.Item className="itm">
           <Link className="link" to="/About" > About Us</Link>
@@ -40,6 +41,7 @@ class Header extends React.Component {
           {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}
         </Nav.Item>
       </div>
+
 
       
     </Nav>
