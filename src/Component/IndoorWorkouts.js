@@ -1,8 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, CardColumns,CardDeck } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Card,CardDeck } from "react-bootstrap";
+//import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button'
+
 import './IndoorWorkouts.css'
 import Image5 from './Sport-Images/Image5.jpg'
 
