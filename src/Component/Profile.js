@@ -87,14 +87,23 @@ class Profile extends Component {
         const { user } = this.props.auth0;
         return (
 
-            <div>
+            <div className="p-card">
                 <UserInfoForm show={this.state.show} hide={this.hideModal} saveUser={this.saveUsersInfo} />
                 <Card style={{ width: '18rem' }} className="procard">
                     <Card.Body>
                         <Image src={user.picture} roundedCircle />  
                         <Card.Title>{user.name}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">{user.email}</Card.Subtitle>
-                        
+                        <Card.Subtitle >{user.email}</Card.Subtitle>
+                        {this.state.users.find(obj=>obj.email == user.email)  && 
+                        <div className="p-card">
+                            <p>Age : {this.state.users.find(obj=>obj.email == user.email).age} </p>
+                            <p>Height : {this.state.users.find(obj=>obj.email == user.email).height}</p>
+                            <p>Weight : {this.state.users.find(obj=>obj.email == user.email).weight}</p>
+                            <p>Favorite Sport: {this.state.users.find(obj=>obj.email == user.email).favSport}</p>
+                            <p>Booked For: {this.state.users.find(obj=>obj.email == user.email).clss
+                            // .map((book)=>{return book.clss})
+                            }</p>
+                            </div>}
                     </Card.Body>
                 </Card>
             </div>

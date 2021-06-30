@@ -3,7 +3,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { withAuth0 } from '@auth0/auth0-react';
-import ChoosenClass from "./ChooesnClass";
+//import ChoosenClass from "./ChooesnClass";
 import AlertModal from "./AlertModal";
 
 import { FcClock, FcCalendar, FcMoneyTransfer } from "react-icons/fc";
