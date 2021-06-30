@@ -11,7 +11,7 @@ class Profile extends Component {
         this.state = {
             show: true,
             users: [],
-            
+            food:0,
         }
     }
     hideModal = (event) => {
@@ -45,8 +45,7 @@ class Profile extends Component {
             this.setState({
                 show: true,
             })
-            // console.log("undefined user"); 
-            console.log("info");   
+            // console.log("undefined user");    
         }
     }
     saveUsersInfo = async (event) => {
@@ -66,39 +65,39 @@ class Profile extends Component {
         // this.state.users.push(addNewUser);
         this.setState({
             users: addNewUser.data,
-            
         })
         console.log(addNewUser);
         console.log(this.state.users);
-        console.log("save");
+        // console.log('after',this.state.food);
     }
-  
-    deletFunction = async (index) => {
-        
+    deletFunction = async (event) => {
+        event.preventDefault();
+        const index=event.target.value;
+        // let newFoodArr=this.state.food.filter((food)=> food.index !== index);
         const { user } = this.props.auth0;
         const ownerEmail = {
-          
           email: user.email
         }
         console.log(ownerEmail)
+        console.log('befor',this.state.food)
         let newFavAfterdelet = await axios.delete(`http://localhost:3010/deleteFood/${index}`, { params: ownerEmail })
         this.setState({
-            users: newFavAfterdelet.data
+            // users: newFavAfterdelet.data
+            food:newFavAfterdelet.data.foods,
         })
         console.log(newFavAfterdelet.data)
-        console.log("delete");
+        console.log('after',this.state.food)
       }
     render() {
         const { user } = this.props.auth0;
         return (
-            
             <div className="p-card">
                 <UserInfoForm show={this.state.show} hide={this.hideModal} saveUser={this.saveUsersInfo} />
                 <Card style={{ width: '18rem' }} className="procard">
                     <Card.Body>
                         <Image src={user.picture} roundedCircle />
                         <Card.Title>{user.name}</Card.Title>
-                        <Card.Subtitle >{user.email}</Card.Subtitle>
+                        {/* <Card.Subtitle >{user.email}</Card.Subtitle> */}
                         {this.state.users.find(obj=>obj.email == user.email)  && 
                         <div className="p-card">
                             <p>Age : {this.state.users.find(obj=>obj.email == user.email).age} </p>
@@ -111,52 +110,39 @@ class Profile extends Component {
                             </div>}
                     </Card.Body>
                 </Card>
-
                 <CardColumns>
-                    
-
-                             {this.state.users.find(obj => obj.email == user.email) && this.state.users.find(obj => obj.email == user.email).foods
-                                .map((item,idx) => { 
-                               
+                            {(this.state.food==0)?
+                                                   this.state.users.find(obj => obj.email == user.email) && this.state.users.find(obj => obj.email == user.email).foods
+                                                    .map((item,idx) => { 
+                                                        return (
+                                                            <Col>
+                                                                <Card id="searchFoodCard"  >
+                                                                    <Card.Img id="image" variant="top" src={item.image} onClick={this.Contact} />
+                                                                    <Card.Body id="cardBody">
+                                                                        <Card.Title class="title">{item.label}</Card.Title>
+                                                                        <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
+                                                                        <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
+                                                                   <Button variant="secondary" value={idx} onClick={this.deletFunction} className="in">Delete</Button>
+                                                                    </Card.Body>
+                                                                </Card>
+                                                        </Col>
+                            )
+                        }):this.state.food.map((item,idx)=>{
                                     return (
                                         <Col>
                                             <Card id="searchFoodCard"  >
-
                                                 <Card.Img id="image" variant="top" src={item.image} onClick={this.Contact} />
-
                                                 <Card.Body id="cardBody">
-
                                                     <Card.Title class="title">{item.label}</Card.Title>
                                                     <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
-                                                   
-                                                    <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" alt="alt"/></Card.Text>
-                                                    
-                                               <Button  variant="primary" onClick={this.deletFunction(idx)}>Delete</Button>
-
+                                                    <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
+                                               <Button variant="secondary" value={idx} onClick={this.deletFunction} className="in">Delete</Button>
                                                 </Card.Body>
                                             </Card>
-
-                                            {/* <Card style={{ width: '25rem' }} >
-                                            <Card.Img variant="top" src={item.image} />
-                                            <Card.Body>
-                                                <Card.Title>{item.label}</Card.Title>
-                                                <Container>
-                                                    <Row>
-                                                        <Col><Card.Text>{item.caloriesNum}Cal/Serving</Card.Text></Col>
-                                                        <Col><Card.Text>Serving:{item.yields}</Card.Text></Col>
-                                                        <Col>{item.mealType}</Col>
-                                                        {/* <Button variant="primary" onClick={() => this.props.deletFunction(this.props.idx)} style={{ width: '100%' ,height:'2rem',backgroundColor: 'gray'}}>Delete</Button> */}
-                                                    {/* </Row>
-                                                </Container>
-                                            </Card.Body> */}
-                                        {/* // </Card> */} 
-                                    </Col>
-        )
-    })
-}
-                        
+                                    </Col> 
+                        )})
+                            }
                 </CardColumns >
-
             </div >
         )
     }
