@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Amiri:ital,wght@1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+*{
+    box-sizing: border-box;
+}
+.classes-container{
+padding-right: 30px;
+padding-left: 30px;
+/* padding-bottom: px; */
+}
+.classes-container-mc3{
+    background-color:  papayawhip;
+    border-style: none;
+}
+.Cards-title{
+    font-family: 'Amiri', serif;
+    font-size: 30px;
+    font-weight: bolder;
+        background-color:  papayawhip;
+}
+.Cards-description{
+    /* font-family: 'Akaya Kanadaka', cursive; */
+    /* font-family: 'Indie Flower', cursive; */
+    font-family: 'Quicksand', sans-serif;
+    background-color: blanchedalmond;
+    padding: 20px;
+    min-height: 230px;
+}
+.more-info-section{
+    position: relative;
+    background-color: blanchedalmond;
+    width: 65%; 
+    align-items: center;
+    margin-left: 16%;
+    border-radius: 10px;
+}
+.more-info-section:hover{
+background-color: white;
+transition-delay: 200ms;
+cursor: pointer;
+}
+.toogle{
+    border-radius: 10px;
+
+}
+.btn-for-book{
+    margin:14%;
+    width: 130px;
+    background-color:#FA9905 ;
+   border-style: none;
+   color:white;
+   border-radius: 30px;
+   transition: 0.3s;
+   border-style: solid;
+   /* border-color: ; */
+   
+}
+.btn-for-book:hover{
+    background-color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+    border-style: solid;
+    border-color: #FA9905;
+    color: #FA9905;
+
+}
+
+.btn-for-book:active{
+    background-color: white;
+    color: rgba(50, 90, 40, 1);
+    border-radius: 30px;
+    transition-delay: 100ms;
+}
+.card-img{
+    border-radius: 20px;
+}
+
+.BookClass-title{
+    background-color:  papayawhip;
+}
+
+.Para2{
+    background-color:  papayawhip;
+}

@@ -3,9 +3,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { withAuth0 } from '@auth0/auth0-react';
-import ChoosenClass from "./ChooesnClass";
+// import ChoosenClass from "./ChooesnClass";
 import AlertModal from "./AlertModal";
-import './SportPage.css'
+import "./BookClass.css";
 
 import { FcClock, FcCalendar, FcMoneyTransfer } from "react-icons/fc";
 import {
@@ -129,31 +129,31 @@ this.setState({
         <br />
         <h1 className="BookClass-title"> Book an Online Class </h1>
         <br />
-        <p style={{ textAlign: "center" }}>
+        <p className='Para2' style={{ textAlign: "center",}}>
           Of course you can learn to be active with our short courses in Jordan
         </p>
         <br /> <br />
-        <CardDeck style={{ height: "400px" }}>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={Image1} style={{ height: "600px" }} />
+        <CardDeck style={{ height: "20%"}} className="classes-container">
+          <Card style={{ width: "18rem" }} className="classes-container-mc3">
+            <Card.Img variant="top" src={Image1} style={{ height: "600px" }} className="card-img" />
             <Card.Body>
-              <Card.Title>Personal with Family</Card.Title>
-              <Card.Text>
+              <Card.Title className="Cards-title">Personal with Family</Card.Title>
+              <Card.Text className="Cards-description">
                 While we're all leading busy lives, it can be hard to fit in
                 family time, let alone time to exercise. Instead of trying to
                 juggle the two, why not merge them together?
               </Card.Text>
               <Card.Body>
-                <Button onClick={this.checkAthClass} name="Personal with Family" value="Personal with Family">
+                <Button onClick={this.checkAthClass} name="Personal with Family" value="Personal with Family" className="btn-for-book" variant="warning">
                   <FcCalendar /> Book Now
                 </Button>
               </Card.Body>
             </Card.Body>
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey="0"className="more-info-section">
               <Accordion.Toggle as={Card.Header} eventKey="1">
                 More Info
               </Accordion.Toggle>
-              <Accordion.Collapse eventKey="1">
+              <Accordion.Collapse eventKey="1" >
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>
                     {" "}
@@ -170,23 +170,23 @@ this.setState({
               </Accordion.Collapse>
             </Accordion>
           </Card>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={Image2} style={{ height: "600px" }} />
+          <Card style={{ width: "18rem" }} className="classes-container-mc3">
+            <Card.Img variant="top" src={Image2} style={{ height: "600px" }} className="card-img"  />
             <Card.Body>
-              <Card.Title>Fit Beginners</Card.Title>
-              <Card.Text>
+              <Card.Title className="Cards-title">Fit Beginners</Card.Title>
+              <Card.Text className="Cards-description">
                 Are you an intermediate runner looking to optimize your
                 performance? Have you just begun your venture into running, and
                 are after new ways to build up your technique?
               </Card.Text>
               <Card.Body>
-                <Button onClick={this.checkAthClass} name="Fit Beginners" value="Fit Beginners">
+                <Button onClick={this.checkAthClass} name="Fit Beginners" value="Fit Beginners" className="btn-for-book" variant="warning">
                   <FcCalendar /> Book Now
                 </Button>
               </Card.Body>
             </Card.Body>
-            <Accordion defaultActiveKey="0">
-              <Accordion.Toggle as={Card.Header} eventKey="1">
+            <Accordion defaultActiveKey="0" className="more-info-section">
+              <Accordion.Toggle as={Card.Header} eventKey="1" >
                 More Info
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="1">
@@ -205,28 +205,28 @@ this.setState({
               </Accordion.Collapse>
             </Accordion>
           </Card>
-          <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={Image3} style={{ height: "600px" }} />
+          <Card style={{ width: "18rem" }} className="classes-container-mc3">
+            <Card.Img variant="top" src={Image3} style={{ height: "600px" }} className="card-img"  />
             <Card.Body>
-              <Card.Title>Fit Master</Card.Title>
-              <Card.Text>
+              <Card.Title className="Cards-title">Fit Master</Card.Title>
+              <Card.Text className="Cards-description">
                 Join to start finding fresh inspiration to improve your
                 coaching. Get immediate access to try our drills library and use
                 our online sketching and professional planning tools to help you
                 coach with confidence.
               </Card.Text>
               <Card.Body>
-                <Button onClick={this.checkAthClass} name="Fit Master" value="Fit Master">
+                <Button onClick={this.checkAthClass} name="Fit Master" value="Fit Master" className="btn-for-book" variant="warning">
                   {" "}
                   <FcCalendar /> Book Now
                 </Button>
               </Card.Body>
             </Card.Body>
-            <Accordion defaultActiveKey="0">
-              <Accordion.Toggle as={Card.Header} eventKey="1">
+            <Accordion defaultActiveKey="0" className="more-info-section">
+              <Accordion.Toggle as={Card.Header} eventKey="1" className='toogle'>
                 More Info
               </Accordion.Toggle>
-              <Accordion.Collapse eventKey="1">
+              <Accordion.Collapse eventKey="1" >
                 <ListGroup className="list-group-flush">
                   <ListGroupItem>
                     {" "}

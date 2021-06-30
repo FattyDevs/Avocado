@@ -1,6 +1,7 @@
 
 .nav{
   background-color: rgba(50, 90, 40, 1);
+  height: 100px;
 }
 .logo{
   height: 9rem;
@@ -30,7 +31,7 @@
   margin-top: 20px;
 }
 .logo{
-  height: 9rem;
+  height: 4rem;
   padding-left: 30 px;
 }
 .item{
@@ -75,6 +76,9 @@
   font-size: 16px;
   border-style: solid;
   border-color:rgba(50, 90, 40, 1);
+  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .link:hover{
@@ -141,17 +145,20 @@ font-family: 'Pacifico', cursive;
 
 .btn {
   margin-left: 0px;
-  background-color: #dabf49;
+  background-color: #FA9905;
   margin-top: 23px;
-  border-color: #dabf49;
+  border-color: #FA9905;
   transform: 0.3s;
   width: 90px;
+  font-family: 'Akaya Kanadaka', cursive;
+  font-family: 'Indie Flower', cursive;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
 .btn:hover{
   transform: 0.3s;
-  color:  #dabf49;
+  color:  #FA9905;
   background-color: white;
-  border-color:  #dabf49;
+  border-color:  #FA9905;
 }

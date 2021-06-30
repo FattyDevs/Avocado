@@ -28,13 +28,13 @@ class Header extends React.Component {
         </Nav.Item> : <></> }
       
         <Nav.Item className="itm">
-          <Link className="link" to="/SportPage">Sports</Link>
+          <Link className="link" to="/SportPage">Exercise</Link>
         </Nav.Item>
         <Nav.Item className="itm">
-          <Link className="link"  >  Food </Link>
+          <Link className="link"  > Nutrition </Link>
         </Nav.Item>
         <Nav.Item className="itm">
-          <Link className="link" to="/About" >  About Us</Link>
+          <Link className="link" to="/About" > About Us</Link>
         </Nav.Item>
         <Nav.Item className="btn">
           {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}
