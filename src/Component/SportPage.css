@@ -7,23 +7,25 @@
 .sport-Page{
     box-sizing: border-box; 
     max-width:fit-content;
-    background-color:  papayawhip;
+    /* background-color:  papayawhip; */
 }
 .CardDeck{
-    margin-top: 200px;
+    margin-top: 10px;
+    margin-bottom: 50px;
     border-style: none;
 
 }
 
 .CardTitle{
     padding: 120px;
+    padding-top: 150px;
     font-size: 28px;
     transition: 0.3s;
     font-family: 'Alfa Slab One', cursive;
 }
 
 .CardTitle:hover{
-    font-size: 33px;
+    font-size: 31px;
     transition: 0.3s;
     color:#FFA900;
 }

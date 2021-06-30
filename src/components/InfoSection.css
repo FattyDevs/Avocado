@@ -2,7 +2,8 @@
 
 .container2 {
   position:absolute;
-  top: 130%;
+  /* top: 130%; */
+  margin-top: 700px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -18,7 +19,8 @@
 
 .container1 {
   position:absolute;
-  top: 195%;
+  /* top: 195%; */
+  margin-top: 260px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -72,3 +74,17 @@ h1{
   font-family: 'Amiri', serif;
   font-weight: bolder;
 }
+
+.buttonLinkExercise{
+  text-decoration: none;
+  color: white;
+
+}
+
+.buttonLinkExercise:hover{
+  text-decoration: none;
+  color: #FA9905;
+
+}
+
+
