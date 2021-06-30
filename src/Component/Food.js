@@ -3,6 +3,8 @@ import axios from 'axios';
 import ResultFood from './ResultFood';
 import Articles from './Articles';
 import { Carousel, Container, Row, Col,CardGroup, CardColumns,InputGroup,FormControl, Card, Button, Form, Modal } from 'react-bootstrap';
+import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
+import { withAuth0 } from '@auth0/auth0-react';
 class Food extends React.Component{
 
 constructor(props){
@@ -153,4 +155,4 @@ this.setState({
         )
     }
 }
-export default Food;
+export default withAuth0(Food);

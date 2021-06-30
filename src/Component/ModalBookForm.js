@@ -15,9 +15,9 @@ class ModalBookForm extends React.Component {
           onHide={this.close}
         >
           <Modal.Body>
-                 Start your class 
+                 Booked! Thank you for joining
                  <br/>
-          <Button onClick={this.close}>close</Button>
+          <Button onClick={this.close}>Ok</Button>
           </Modal.Body>
         </Modal>
       </>

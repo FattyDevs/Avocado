@@ -18,27 +18,29 @@ class Header extends React.Component {
       <Nav  className="div">
         <img src={logo} alt="Logo" className="logo"/>
         <Navbar.Brand className="brand">AVOCADO</Navbar.Brand>
-      <Nav.Item className="itm">
-        <Link className="link" to="/">Home</Link>
-      </Nav.Item>
+      <div className="nav-bar-group">
+        <Nav.Item className="itm">
+          <Link className="link" to="/Home">Home</Link>
+        </Nav.Item>
 
-      {this.props.auth0.isAuthenticated ?  
-      <Nav.Item className="itm">
-        <Link className="link" to="/Profile">Profile</Link>
-      </Nav.Item> : <></> }
-     
-      <Nav.Item className="itm">
-        <Link className="link" to="/SportPage">Sports</Link>
-      </Nav.Item>
-      <Nav.Item className="itm">
-        <Link className="link" to="/Food" >  Food </Link>
-      </Nav.Item>
-      <Nav.Item className="itm">
-        <Link className="link" to="/About" >  About Us</Link>
-      </Nav.Item>
-      <Nav.Item className="btn">
-        {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}
-      </Nav.Item>
+        {this.props.auth0.isAuthenticated ?  
+        <Nav.Item className="itm">
+          <Link className="link" to="/Profile">Profile</Link>
+        </Nav.Item> : <></> }
+      
+        <Nav.Item className="itm">
+          <Link className="link" to="/SportPage">Exercise</Link>
+        </Nav.Item>
+        <Nav.Item className="itm">
+          <Link className="link" to="/Food" > Nutrition </Link>
+        </Nav.Item>
+        <Nav.Item className="itm">
+          <Link className="link" to="/About" > About Us</Link>
+        </Nav.Item>
+        <Nav.Item className="btn">
+          {this.props.auth0.isAuthenticated ? <LogoutButton/> : <LoginButton />}
+        </Nav.Item>
+      </div>
 
 
       

@@ -68,6 +68,7 @@ class SportPage extends React.Component {
 
   render() {
     return (
+      // <div className="sport-Page">
       <>
       <br/>
 
@@ -88,19 +89,20 @@ class SportPage extends React.Component {
                   </Card.ImgOverlay>
                   </Link>
                 </Card>
-
                 <Card onClick={(e) => { this.displayOutdoorWorkouts(e) }} className ="CardRight"> 
                 <Link to="/SportPage/outdoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image4} alt="Card image" style={{ height:"320px"}}/>
                   <Card.ImgOverlay>
-                    <Card.Title className="CardTitle" style={{ padding: "120px"}}>
+                    <Card.Title className="CardTitle">
                       Outdoor Workouts
                     </Card.Title>
                   </Card.ImgOverlay>
                   </Link>
                 </Card>
               </CardDeck>
+              <BookClass/>
             </Route>
+            
 
             <Route path="/SportPage/outdoor">
               {/* <Link to="/outdoor">outdoor</Link> */}
@@ -116,9 +118,10 @@ class SportPage extends React.Component {
                   displayIn={this.state.InDoorData}
                 />}
             </Route>
+            
           </Switch>
         </Router>
-       <BookClass/>
+      {/* // </div> */}
       </>
     )
       ;

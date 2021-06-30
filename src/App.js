@@ -1,7 +1,7 @@
 
 // export default App;
 import React from 'react';
-import Header from './Header';
+import Header from './components/Navbar';
 import Footer from './Footer';
 import { withAuth0 } from '@auth0/auth0-react';
 import HomePage from './Component/HomePage.js';
@@ -24,8 +24,8 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/">
-              {this.props.auth0.isAuthenticated ? <Profile /> : <HomePage />}
-
+              <HomePage/>
+            
             </Route>
 
             <Route path="/SportPage">
@@ -46,12 +46,13 @@ class App extends React.Component {
               <About />
             </Route>
             <Route path="/Profile">
+              {this.props.auth0.isAuthenticated ? <Profile /> : <HomePage />} 
               <Profile />
             </Route>
            
 
           </Switch>
-          <Footer />
+          <Footer className='footerMain' />
 
         </Router>
       </>

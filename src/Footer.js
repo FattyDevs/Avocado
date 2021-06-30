@@ -15,7 +15,7 @@ class Footer extends React.Component {
       <div className="foot">
      
         
-     <p>&copy; 2021 - Fatty Devs  </p>
+
         
 
       <div className="div2">
@@ -29,6 +29,7 @@ class Footer extends React.Component {
          <HiPhone /> +962 7 001 0001 -
         
          <MdLocationOn /> Amman - Jordan .
+         <p className="par">&copy; 2021 - Fatty Devs  </p>
 
       </div>
       </div>
