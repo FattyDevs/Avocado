@@ -11,6 +11,8 @@ import Profile from './Component/Profile.js';
 import About from './Component/About.js';
 import Food from './Component/Food.js';
 import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
+import { NavbarBrand } from 'react-bootstrap';
+import Navbar from './components/Navbar';
 
 
 class App extends React.Component {
@@ -21,12 +23,23 @@ class App extends React.Component {
       <>
         <Router>
 
-          <Header />
+          <Navbar />
           <Switch>
-            <Route exact path="/">
-              <HomePage/>
+            {/* <Route exact path="/">
+              <HomePage />
             
-            </Route>
+            </Route> */}
+            {this.props.auth0.isAuthenticated ? 
+             <Route exact path="/">
+             <Profile />
+           
+           </Route>:
+             <Route exact path="/">
+             <HomePage />
+           
+           </Route>
+            }
+             
 
             <Route path="/SportPage">
               <div className="App">
@@ -45,15 +58,14 @@ class App extends React.Component {
             <Route path="/About">
               <About />
             </Route>
+           
             <Route path="/Profile">
-              {this.props.auth0.isAuthenticated ? <Profile /> : <HomePage />} 
               <Profile />
             </Route>
            
 
           </Switch>
           <Footer className='footerMain' />
-
         </Router>
       </>
     )
