@@ -8,8 +8,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import OutdoorWorkouts from "./OutdoorWorkouts";
-import IndoorWorkouts from "./IndoorWorkouts";
+import OutdoorWorkouts from "./OutdoorWorkouts.js";
+import IndoorWorkouts from "./IndoorWorkouts.js";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
