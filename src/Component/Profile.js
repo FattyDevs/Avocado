@@ -45,7 +45,8 @@ class Profile extends Component {
             this.setState({
                 show: true,
             })
-            // console.log("undefined user");    
+            // console.log("undefined user"); 
+            console.log("info");   
         }
     }
     saveUsersInfo = async (event) => {
@@ -69,6 +70,7 @@ class Profile extends Component {
         })
         console.log(addNewUser);
         console.log(this.state.users);
+        console.log("save");
     }
   
     deletFunction = async (index) => {
@@ -84,6 +86,7 @@ class Profile extends Component {
             users: newFavAfterdelet.data
         })
         console.log(newFavAfterdelet.data)
+        console.log("delete");
       }
     render() {
         const { user } = this.props.auth0;
@@ -126,7 +129,7 @@ class Profile extends Component {
                                                     <Card.Title class="title">{item.label}</Card.Title>
                                                     <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
                                                    
-                                                    <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
+                                                    <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" alt="alt"/></Card.Text>
                                                     
                                                <Button  variant="primary" onClick={this.deletFunction(idx)}>Delete</Button>
 

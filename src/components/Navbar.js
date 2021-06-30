@@ -1,7 +1,7 @@
 import { Component } from "react"
 import {Navbar, Nav}from 'react-bootstrap'
-import { Button } from "./Button";
-import { MenuItems } from "./MenuItems"
+//import { Button } from "./Button";
+//import { MenuItems } from "./MenuItems"
 import logo from "../imgv/Avocado_logo-removebg-preview.png";
 // import './Navbar.css'
 import React from 'react';
@@ -11,7 +11,7 @@ import '../header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../LoginButton.js';
 import LogoutButton from '../LogoutButton.js';
-import Food from '../Component/Food.js';
+//import Food from '../Component/Food.js';
 
 
 
