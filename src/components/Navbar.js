@@ -1,7 +1,7 @@
 import { Component } from "react"
 import {Navbar, Nav}from 'react-bootstrap'
-import { Button } from "./Button";
-import { MenuItems } from "./MenuItems"
+//import { Button } from "./Button";
+//import { MenuItems } from "./MenuItems"
 import logo from "../imgv/Avocado_logo-removebg-preview.png";
 // import './Navbar.css'
 import React from 'react';
@@ -11,6 +11,7 @@ import '../header.css';
 import { withAuth0 } from '@auth0/auth0-react';
 import LoginButton from '../LoginButton.js';
 import LogoutButton from '../LogoutButton.js';
+//import Food from '../Component/Food.js';
 
 
 
@@ -46,7 +47,7 @@ class HeaderNav extends Component {
                 <img src={logo} alt="Logo" className="logoo" />
                 <Navbar.Brand className="navbar-logo">AVOCADO<i className="fab fa-react"></i></Navbar.Brand>
                 <Nav.Item className="itm">
-                    <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/Home">Home</Link>
                 </Nav.Item>
 
                 {this.props.auth0.isAuthenticated ?
@@ -58,7 +59,7 @@ class HeaderNav extends Component {
                     <Link className="link" to="/SportPage">Sports</Link>
                 </Nav.Item>
                 <Nav.Item className="itm">
-                    <Link className="link"  >  Food </Link>
+                    <Link className="link" to="/Food"  >  Food </Link>
                 </Nav.Item>
                 <Nav.Item className="itm">
                     <Link className="link" to="/About" >  About Us</Link>

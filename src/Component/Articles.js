@@ -1,6 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import { Carousel, Container, Row, Col, CardColumns, InputGroup, FormControl, Card, Button, Form, Modal } from 'react-bootstrap';
+//import axios from 'axios';
+import { Carousel, Container, Row, Col,  Card, } from 'react-bootstrap';
 
 
 class Articles extends React.Component {
