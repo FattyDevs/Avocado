@@ -11,6 +11,7 @@ class Profile extends Component {
         this.state = {
             show: true,
             users: [],
+            
         }
     }
     hideModal = (event) => {
@@ -64,11 +65,14 @@ class Profile extends Component {
         // this.state.users.push(addNewUser);
         this.setState({
             users: addNewUser.data,
+            
         })
         console.log(addNewUser);
         console.log(this.state.users);
     }
+  
     deletFunction = async (index) => {
+        
         const { user } = this.props.auth0;
         const ownerEmail = {
           
@@ -85,6 +89,7 @@ class Profile extends Component {
         const { user } = this.props.auth0;
         return (
             <div className="p-card">
+                
                 <UserInfoForm show={this.state.show} hide={this.hideModal} saveUser={this.saveUsersInfo} />
                 <Card style={{ width: '18rem' }} className="procard">
                     <Card.Body>
@@ -104,8 +109,9 @@ class Profile extends Component {
                 <CardColumns>
                     
 
-                            {this.state.users.find(obj => obj.email == user.email) && this.state.users.find(obj => obj.email == user.email).foods
-                                .map((item,idx) => {
+                             {this.state.users.find(obj => obj.email == user.email) && this.state.users.find(obj => obj.email == user.email).foods
+                                .map((item,idx) => { 
+                               
                                     return (
                                         <Col>
                                             <Card id="searchFoodCard"  >
@@ -119,7 +125,7 @@ class Profile extends Component {
                                                    
                                                     <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
                                                     
-                                               <Button variant="primary" onClick={() => this.deletFunction(idx)}>Delete</Button>
+                                               <Button  variant="primary" onClick={this.deletFunction(idx)}>Delete</Button>
 
                                                 </Card.Body>
                                             </Card>
