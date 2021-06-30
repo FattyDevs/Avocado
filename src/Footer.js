@@ -15,7 +15,7 @@ class Footer extends React.Component {
       <div className="foot">
      
         
-    
+
         
 
       <div className="div2">

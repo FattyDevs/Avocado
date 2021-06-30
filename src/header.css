@@ -27,6 +27,7 @@
 .foot{
   background-color: #F0EBCC;
   color: #fff;
+  margin-top: 20px;
 }
 .logo{
   height: 9rem;
@@ -71,24 +72,22 @@
   padding: 0.5rem 1rem;
   background: rgba(50, 90, 40, 1);
   transition: all 0.2s ease-out;
+  font-size: 16px;
+  border-style: solid;
+  border-color:rgba(50, 90, 40, 1);
 }
 
 .link:hover{
-  color: seashell;
+  color: white;
   transition: all 0.2s ease-out;
   box-sizing: border-box;
-  color: chartreuse;
+  /* color: chartreuse; */
+  text-decoration: none;
+  border-style: solid;
+  border-color: #dabf49;
+  border-radius: 5px;
 }
 
-.btn{
-  margin-top: 1.7rem;
-  margin-left: 10rem;
-
-}
-
-.btn:hover{
-  transform: scale(1.2); 
-}
 
 .itm{
   color: white;
@@ -102,8 +101,8 @@
    color: seashell;
    transition: all 0.2s ease-out;
    box-sizing: border-box;
-   color: chartreuse;
    text-decoration: none;
+   
 }
 
 .logoo {
@@ -119,12 +118,13 @@
   justify-self: start;
   /* padding-left: 5px; */
   padding-top: 15px;
-  padding-right: 200px;
+  padding-right: 340px;
   cursor: pointer;
   /* font-family: "Futura-CondensedExtraBold", sans-serif; */
   font-size: 28px;
   font-family: 'Caveat', cursive;
 font-family: 'Pacifico', cursive;
+  text-decoration: none;
   /* font-family: 'Caveat', cursive; */
   /* font-family: 'Caveat', cursive; */
   /* height: 5rem; */
@@ -132,4 +132,26 @@ font-family: 'Pacifico', cursive;
 
 .nav-bar-group{
   padding-left: 400px;
+}
+
+.bu {
+    padding-left: 20px;
+    margin-left: 0px;
+}
+
+.btn {
+  margin-left: 0px;
+  background-color: #dabf49;
+  margin-top: 23px;
+  border-color: #dabf49;
+  transform: 0.3s;
+  width: 90px;
+}
+
+
+.btn:hover{
+  transform: 0.3s;
+  color:  #dabf49;
+  background-color: white;
+  border-color:  #dabf49;
 }

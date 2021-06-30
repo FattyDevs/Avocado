@@ -93,7 +93,7 @@ class SportPage extends React.Component {
                 <Link to="/SportPage/outdoor" style={{ textDecoration: 'none', color:"white" }}>
                   <Card.Img src={Image4} alt="Card image" style={{ height:"320px"}}/>
                   <Card.ImgOverlay>
-                    <Card.Title className="CardTitle" style={{ padding: "120px"}}>
+                    <Card.Title className="CardTitle">
                       Outdoor Workouts
                     </Card.Title>
                   </Card.ImgOverlay>
