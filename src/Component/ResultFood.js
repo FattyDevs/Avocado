@@ -132,12 +132,12 @@ Contact=()=> {
     mealType={item.mealType}
     idx={idx}
 
-    />
-    )
-})}
-  </Row>
-</Container>
-</CardColumns> */}
+//     />
+//     )
+// })}
+//   </Row>
+// </Container>
+// </CardColumns> */}
                 {/* <Button onClick={this.getting}  id="button-n2">get</Button> */}
 
     <Col>
