@@ -37,5 +37,14 @@
     left: 10px
 }
 
+.ButtonWorkout {
+    margin-left: 40px;
+}
 
+.btn-outline-warning {
+    border-color: #ffc107;
+    margin-left: 160px;
+    width: 100px;
+    color: white;
+}
 

@@ -74,3 +74,17 @@ h1{
   font-family: 'Amiri', serif;
   font-weight: bolder;
 }
+
+.buttonLinkExercise{
+  text-decoration: none;
+  color: white;
+
+}
+
+.buttonLinkExercise:hover{
+  text-decoration: none;
+  color: #FA9905;
+
+}
+
+

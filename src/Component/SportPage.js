@@ -8,12 +8,12 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import OutdoorWorkouts from "./OutdoorWorkouts.js";
-import IndoorWorkouts from "./IndoorWorkouts.js";
+import OutdoorWorkouts from "./OutdoorWorkouts";
+import IndoorWorkouts from "./IndoorWorkouts";
 import Image2 from "./Sport-Images/Image2.jpg";
 import Image4 from "./Sport-Images/Image4.jpg";
 import "./SportPage.css";
-import BookClass from "./BookClass.js";
+import BookClass from "./BookClass";
 
 
 class SportPage extends React.Component {
@@ -68,7 +68,8 @@ class SportPage extends React.Component {
 
   render() {
     return (
-      <div className="sport-Page">
+      // <div className="sport-Page">
+      <>
       <br/>
 
       <h3 className="sport-qoute">"Good, Better, Best. Never let it rest. <br/> 
@@ -99,6 +100,8 @@ class SportPage extends React.Component {
                   </Link>
                 </Card>
               </CardDeck>
+              <BookClass/>
+            </Route>
             
 
             <Route path="/SportPage/outdoor">
@@ -115,11 +118,11 @@ class SportPage extends React.Component {
                   displayIn={this.state.InDoorData}
                 />}
             </Route>
-            <BookClass/>
-            </Route>
+            
           </Switch>
         </Router>
-      </div>
+      {/* // </div> */}
+      </>
     )
       ;
   }

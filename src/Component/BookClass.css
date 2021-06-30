@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
 }
+
 .classes-container{
 padding-right: 30px;
 padding-left: 30px;
@@ -82,3 +83,4 @@ cursor: pointer;
 .Para2{
     background-color:  papayawhip;
 }
+

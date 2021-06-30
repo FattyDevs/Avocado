@@ -28,11 +28,11 @@
 .foot{
   background-color: #F0EBCC;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 1000px;
 }
 .logo{
   height: 4rem;
-  padding-left: 30 px;
+  padding-left: 30px;
 }
 .item{
   font-size: larger;
@@ -58,7 +58,7 @@
   background-color: rgba(50, 90, 40, 1);
   text-align: center;
   padding: 1rem;
-  margin-top: 60rem;
+  /* margin-top: 60rem; */
   
 }
 
@@ -122,7 +122,7 @@
   justify-self: start;
   /* padding-left: 5px; */
   padding-top: 15px;
-  padding-right: 340px;
+  padding-right: 190px;
   cursor: pointer;
   /* font-family: "Futura-CondensedExtraBold", sans-serif; */
   font-size: 28px;

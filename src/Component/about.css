@@ -33,3 +33,25 @@
     margin-top: 150px;
     margin-left: 100px;
 }
+
+.blockAbout{
+    text-align: center;
+    width: 800px;
+    margin-bottom: 10px;
+    
+}
+
+.textAbout{
+    margin-top: 70px;
+    margin-left: 150px;
+    width: 900px;
+}
+
+.meetText {
+    width: 900px;
+    margin-left: 330px;
+    margin-top: 50px;
+    font-size: 60px;
+    text-decoration: underline;
+    color: #FA9905 ;
+}
