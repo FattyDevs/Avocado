@@ -12,6 +12,8 @@ import Food from './Component/Food.js';
 import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
 //import { NavbarBrand } from 'react-bootstrap';
 import Navbar from './components/Navbar';
+
+
 class App extends React.Component {
   render() {
     return (
@@ -21,15 +23,20 @@ class App extends React.Component {
           <Switch>
             {/* <Route exact path="/">
               <HomePage />
+            
             </Route> */}
             {this.props.auth0.isAuthenticated ? 
              <Route exact path="/">
              <Profile />
+           
            </Route>:
              <Route exact path="/">
              <HomePage />
+           
            </Route>
             }
+             
+
             <Route path="/SportPage">
               <div className="App">
                 <SportPage />
@@ -38,15 +45,20 @@ class App extends React.Component {
             <Route path="/Home">
               <HomePage />
             </Route>
+
             <Route path="/Food">
               <Food />
             </Route>
+
             <Route path="/About">
               <About />
             </Route>
+           
             <Route path="/Profile">
               <Profile />
             </Route>
+           
+
           </Switch>
           <Footer className='footerMain' />
         </Router>
@@ -54,4 +66,5 @@ class App extends React.Component {
     )
   }
 }
+
 export default withAuth0(App);

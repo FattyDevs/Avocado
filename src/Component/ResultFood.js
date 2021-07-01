@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import FavDish from './FavDish';
+import { withAuth0 } from '@auth0/auth0-react';
 import { Carousel, Container, Row, Col, CardColumns, Card, Button, Form, Modal } from 'react-bootstrap';
 
 class ResultFood extends React.Component{
@@ -59,9 +60,9 @@ class ResultFood extends React.Component{
     }
         
     favDishs= async ()=>{
-        
+        const { user } = this.props.auth0;
         const AddFood = {
-            email:'asailik1993@gmail.com',
+            email:user.email,
             label:this.props.label,
             image:this.props.image,
             url:this.props.url,
@@ -69,9 +70,9 @@ class ResultFood extends React.Component{
             calories:this.props.calories,
             mealType:this.props.mealType,
         }
-        // console.log(AddFood) 
+        console.log(AddFood) 
         const favFood= await axios.post(`http://localhost:3010/addFood`,AddFood)
-
+        console.log(favFood.data)
         this.setState({
             favFood:favFood.data
         })
@@ -79,16 +80,7 @@ class ResultFood extends React.Component{
     
 
     }
-    deletFunction = async (index) => {
-        
-        const ownerEmail = {
-          email: 'asilik!993@gmail.com'
-        }
-        let newFavAfterdelet = await axios.delete(`http://localhost:3010/deleteFood/${index}`, { params: ownerEmail })
-        this.setState({
-            favFood: newFavAfterdelet.data
-        })
-      }
+   
 
 
 
@@ -116,8 +108,8 @@ Contact=()=> {
     render(){
         return(
             <>
-        
-    {/* <CardColumns>
+            
+ {/* <CardColumns>
     <Container>
           <Row>
     {this.state.favFood.map((item,idx)=>{
@@ -132,15 +124,17 @@ Contact=()=> {
     mealType={item.mealType}
     idx={idx}
 
-//     />
-//     )
-// })}
-//   </Row>
-// </Container>
-// </CardColumns> */}
+    />
+    )
+})}
+  </Row>
+</Container>
+</CardColumns> */}
+        
+   
                 {/* <Button onClick={this.getting}  id="button-n2">get</Button> */}
 
-    <Col>
+   
     <Card id="searchFoodCard"  >
      
   <Card.Img  id="image" variant="top" src={this.props.image} onClick={this.Contact} />
@@ -151,12 +145,12 @@ Contact=()=> {
     <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
     {/* <Container> */}
           {/* <Row> */}
-<Card.Text class="calories">{this.state.caloriesNum}<img src="https://img.icons8.com/emoji/33/000000/fire.png"/></Card.Text>
+<Card.Text class="calories">{this.state.caloriesNum}<img src="https://img.icons8.com/emoji/33/000000/fire.png" alt=""/></Card.Text>
 {/* <Col><Card.Text id="yield">Serving:{this.props.yield}</Card.Text></Col> */}
 {/* <Col  id="mealType">{this.props.mealType}</Col> */}
 
- <Card.Text>
-     <p> <img src="https://img.icons8.com/material-outlined/20/000000/visible--v1.png"/>{this. getRandomArbitrary(10,30)} <img src="https://img.icons8.com/ios-glyphs/20/000000/filled-like.png"/>{this. getRandomArbitrary(0,10)} <img id ="buttonFav" data-toggle="tooltip" data-placement="right" title="Add To Favorite"onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/25/fa314a/filled-like.png"/> </p> </Card.Text>
+ <Card.Text >
+     <p id="cardTexr1"> <img src="https://img.icons8.com/material-outlined/20/000000/visible--v1.png" alt=""/>{this.getRandomArbitrary(10,30)} <img src="https://img.icons8.com/ios-glyphs/20/000000/filled-like.png" alt=""/>{this.getRandomArbitrary(0,10)} <img id ="buttonFav" data-toggle="tooltip" data-placement="right" title="Add To Favorite"onClick={this.favDishs}  src="https://img.icons8.com/ios-glyphs/25/fa314a/filled-like.png" alt=""/> </p> </Card.Text>
 {/* <Button id ="buttonMore" variant="outline-secondary" onClick={this.Contact}>More..</Button> */}
 {/* <Button id ="buttonFav" variant="outline-secondary" onClick={this.favDishs}>
     <img onClick={this.favDishs} id ="buttonFav" src="https://img.icons8.com/ios-glyphs/30/fa314a/filled-like.png"/> 
@@ -174,7 +168,6 @@ Contact=()=> {
     {/* </Container> */}
   </Card.Body>
   </Card>
-</Col>
 
 
 
@@ -230,4 +223,4 @@ Contact=()=> {
 
 
 
-export default ResultFood;
+export default withAuth0(ResultFood);

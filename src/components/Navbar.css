@@ -5,7 +5,9 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+
 }
+
 .logoo {
     height: 6rem;
     background-color:rgba(50, 90, 40, 1) ;
@@ -65,10 +67,14 @@ font-family: 'Pacifico', cursive;
   /* transition: 1s; */
   color: chartreuse;
   /* text-decoration: underline; */
+  
 } 
+
 .fa-bars {
+
     color: #fff;
 }
+
 .nav-links-mobile {
     color: #fff;
     display: none;
@@ -78,9 +84,11 @@ font-family: 'Pacifico', cursive;
     background-color:rgba(50, 90, 40, 1);
     /* background-color: yellow; */
 }
+
 .menu-icon {
     display: none;
 }
+
 @media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
