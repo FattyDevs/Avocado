@@ -13,9 +13,8 @@ class Articles extends React.Component {
     return (
 
       <div>
-        <Card style={{ width: '100%', marginTop: '.5rem' }} className="bg-dark text-white">
           {/* <Card.Img style={{width:'100%' ,height:'43rem',opacity:"100%"}}src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image" /> */}
-          <Card.ImgOverlay>
+          {/* <Card.ImgOverlay> */}
             {/* <Card.Title style={{fontSize:"3rem"}}>What are the benefits of eating healthy?</Card.Title>
     <Card.Text style={{width:'50%',backgroundColor:'black',opacity:"30%",borderRadius:"2rem",padding:"1rem",border:'1rem solid green'}}>
     <h2>1. Heart health</h2>
@@ -41,60 +40,60 @@ class Articles extends React.Component {
    <h4>  2018, researchers found that a diet rich in fiber and lean proteins resulted in weight loss without the need for monitoring calorie intake.</h4>
     </Card.Text> */}
 
-          </Card.ImgOverlay>
-        </Card>
+          {/* </Card.ImgOverlay> */}
+        
 
 
 
 
-        <Card style={{ width: '100%' }} className="bg-dark text-white">
+        <Card  class="bg-darktext-white">
           {/* <Card.Img id="infoImg1"src="https://images.pexels.com/photos/4069258/pexels-photo-4069258.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"  alt="pic"/> */}
 
           <Card.Img id="overLayIMG" src="https://cdn.crispedge.com/4cbb17.png" />
           <Card.ImgOverlay>
-            <Card.Title id="infoTitle1" style={{ fontSize: "3rem", textAlign: "center" }}>WHAT ARE THE BENEFITS OF EATING HEALTHY?</Card.Title>
+            <Card.Title id="infoTitle1" style={{ fontSize: "3rem", textAlign: "center" ,color:"white"}}>WHAT ARE THE BENEFITS OF EATING HEALTHY?</Card.Title>
 
             <Container>
-              <Row>
-                <Col>
-
-                  <Card.Text><img src="https://img.icons8.com/ios-filled/100/FFFFFF/medical-heart.png" /></Card.Text>
-                </Col>
-                <Col>
-
-                  <Card.Text><img src="https://img.icons8.com/ios-filled/100/FFFFFF/lol--v1.png" /></Card.Text>
-                </Col>
-                <Col>
-
-                  <Card.Text><img src="https://img.icons8.com/ios-filled/100/FFFFFF/scale.png" /></Card.Text>
-                </Col>
-              </Row>
-              <Row id="textInfo">
+              <Row id="imgArt">
                 <Col >
 
-                  <Card.Text>Heart Health</Card.Text>
+                  <Card.Text class="imgArt" ><img src="https://img.icons8.com/ios-filled/100/FFFFFF/medical-heart.png" /></Card.Text>
                 </Col>
                 <Col>
 
-                  <Card.Text>Better Mood</Card.Text>
+                  <Card.Text class="imgArt" ><img src="https://img.icons8.com/ios-filled/100/FFFFFF/lol--v1.png" /></Card.Text>
                 </Col>
                 <Col>
 
-                  <Card.Text>Weight Loss</Card.Text>
+                  <Card.Text class="imgArt" ><img src="https://img.icons8.com/ios-filled/100/FFFFFF/scale.png" /></Card.Text>
                 </Col>
               </Row>
-              <Row id="moreInfo">
-                <Col>
+              <Row >
+                <Col  >
 
-                  <Card.Text> Some sources report that it is possible to prevent up to 80% of premature heart disease and stroke diagnoses with lifestyle changes, such as increasing physical activity and healthful eating</Card.Text>
+                  <Card.Text class="textInfo">Heart Health</Card.Text>
                 </Col>
                 <Col>
 
-                  <Card.Text>In 2016, researchers found that diets with a high glycemic load may trigger increased symptoms of depression and fatigue.</Card.Text>
+                  <Card.Text class="textInfo">Better Mood</Card.Text>
                 </Col>
                 <Col>
 
-                  <Card.Text>In 2018, researchers found that a diet rich in fiber and lean proteins resulted in weight loss without the need for monitoring calorie intake.</Card.Text>
+                  <Card.Text class="textInfo">Weight Loss</Card.Text>
+                </Col>
+              </Row>
+              <Row >
+                <Col>
+
+                  <Card.Text class="moreInfo"> Some sources report that it is possible to prevent up to 80% of premature heart disease and stroke diagnoses with lifestyle changes, such as increasing physical activity and healthful eating</Card.Text>
+                </Col>
+                <Col>
+
+                  <Card.Text class="moreInfo">In 2016, researchers found that diets with a high glycemic load may trigger increased symptoms of depression and fatigue.</Card.Text>
+                </Col>
+                <Col>
+
+                  <Card.Text class="moreInfo">In 2018, researchers found that a diet rich in fiber and lean proteins resulted in weight loss without the need for monitoring calorie intake.</Card.Text>
                 </Col>
               </Row>
             </Container>
@@ -120,7 +119,7 @@ class Articles extends React.Component {
 
         </Card>
 
-        <Carousel>
+        <Carousel style={{width:'100%'}}>
   <Carousel.Item interval={4000}>
     <img 
 

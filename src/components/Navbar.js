@@ -49,12 +49,10 @@ class HeaderNav extends Component {
                 <Nav.Item className="itm">
                 <Link className="link" to="/Home">Home</Link>
                 </Nav.Item>
-
                 {this.props.auth0.isAuthenticated ?
                     <Nav.Item className="itm">
                         <Link className="link" to="/Profile">Profile</Link>
                     </Nav.Item> : <></>}
-
                 <Nav.Item className="itm">
                     <Link className="link" to="/SportPage">Sports</Link>
                 </Nav.Item>

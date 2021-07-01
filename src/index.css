@@ -16,7 +16,8 @@ code {
 
 #searchFoodCard  {
   /* width:160px ; */
-  background-color:rgb(252, 244, 244);
+  background-color:#F2F2F2
+;
   /* margin-top:1rem; */
   box-shadow: 0 4px 8px 0 rgba(102, 204, 0, 0.82);
   transition: 0.3s;
@@ -27,7 +28,7 @@ code {
 .title{
   position: absolute;
   top: 0;
-  bottom: 20rem;
+  bottom: 23rem;
   left: 0;
   right: 0;
   background: rgba(102, 204, 0, 0.82);
@@ -46,7 +47,7 @@ font-weight: bolder;
 
   position: absolute;
   top:5rem;
-  bottom: 17.5rem;
+  bottom: 22rem;
   left: 0;
   right: 0;
   background: rgba(252, 253, 253);
@@ -88,8 +89,8 @@ font-weight: bolder;
 .calories{
 
   position: absolute;
-  top: 19.5rem;
-  bottom: 6rem;
+  top: 21.8rem;
+  bottom: 4.5rem;
   left: 0;
   right: 0;
   background: rgba(102, 204, 0, 0.82);
@@ -130,7 +131,7 @@ font-weight: bolder;
 
 
 #cardBody{
-  height: 3rem;
+  height: 1rem;
 }
 
 #image{
@@ -162,12 +163,21 @@ font-weight: bolder;
   height:35rem;
 }
 
-#textInfo{
+.textInfo{
   font-size: 3rem;
+  color: white;
+  background-color:#4cbb17 ;
+  
 }
 
-#moreInfo{
+.moreInfo{
   font-size: 1.5rem;
+  /* background-color: coral; */
+  margin-top: 2rem;
+  color: white;
+  background-color:#4cbb17 ;
+  text-align: left;
+
 }
 .d-blockw-100{
   height: 40rem;
@@ -178,4 +188,32 @@ font-weight: bolder;
 
 .captions1{
   color:rgba(102, 204, 0, 0.82)
+}
+/* .bg-darktext-white{
+  background-color: blanchedalmond;
+} */
+#cardTexr1{
+  background-color: #F2F2F2
+  ;
+}
+
+.imgArt{
+  margin-bottom: 2rem;
+  background-color:#4cbb17 ;
+}
+
+#titleCard:hover {
+  background-color: rgb(243, 168, 7);
+}
+
+.p-card{
+  font-size: 1.5rem;
+  
+  
+
+}
+
+.procard{
+  margin-left: 10rem;
+ 
 }

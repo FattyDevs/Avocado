@@ -1,4 +1,3 @@
-
 // export default App;
 import React from 'react';
 //import Header from './components/Navbar';
@@ -16,13 +15,10 @@ import Navbar from './components/Navbar';
 
 
 class App extends React.Component {
-
   render() {
-
     return (
       <>
         <Router>
-
           <Navbar />
           <Switch>
             {/* <Route exact path="/">
@@ -45,7 +41,6 @@ class App extends React.Component {
               <div className="App">
                 <SportPage />
               </div>
-
             </Route>
             <Route path="/Home">
               <HomePage />

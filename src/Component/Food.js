@@ -71,13 +71,16 @@ this.setState({
             <>
              <Card  >
                
-    <Card.Img style={{width:'100%' ,height:'50rem',opacity:"100%"}}src="https://images.pexels.com/photos/952478/pexels-photo-952478.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image" />
+    <Card.Img style={{width:'100%' ,height:'50rem',opacity:"100%"}}src="https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Card image" />
   <Card.ImgOverlay style={{paddingTop:'20rem',width:"80%",paddingLeft:'20rem'}}>
-  <Card.Title style={{fontSize:'3rem',fontWeight:'bold',padding:'.5rem',color:'black'}}>Search For Recipes And Food...</Card.Title>
+  <Card.Title id="titleCard" style={{fontSize:'2.6rem',fontWeight:'bolder',color:'white',textShadow:"4px 4px #4cbb17"}}>Search For Recipes And Food...</Card.Title>
 <Form  onSubmit ={this.searchMeal}>
-  <InputGroup style={{border:'.3rem solid rgba(102, 204, 0, 0.82) '}}className="mb-3" >
-    <Form.Control placeholder="Find Recipe" style={{fontSize:'1.9rem',fontWeight:'bold'}} name='meal'/>
-    <Button style={{fontSize:'1.5rem',fontWeight:'bold',backgroundColor:'rgba(96,96,96,0.9)',width:'10%'}} type="submit" variant="outline-secondary" id="button-addon2"><img src="https://img.icons8.com/ios/40/ffffff/search--v1.png"/></Button>
+  <InputGroup style={{border:'.2rem solid rgba(102, 204, 0, 0.82) '}}className="mb-3" >
+    <Form.Control  placeholder="Find Recipe ..." style={{fontSize:'1.5rem',fontWeight:'bold',fontStyle:"italic"}} name='meal'/>
+    {/* <Button style={{fontSize:'1.5rem',fontWeight:'bold',backgroundColor:'rgba(96,96,96,0.9)',width:'7%',height:'2rem',position:"absolute",top:"0",right:"0"}} type="submit" variant="outline-secondary" id="button-addon2"><img src="https://img.icons8.com/ios/50/ffffff/search--v1.png"/></Button> */}
+    {/* <img src="https://img.icons8.com/ios/50/dddddd/search--v1.png"/> */}
+    {/* <img src="https://img.icons8.com/color/48/000000/search.png"/> */}
+    {/* <img  src="https://img.icons8.com/ios-filled/50/000000/search--v4.png"/> */}
   </InputGroup>
   </Form>
   </Card.ImgOverlay>
@@ -86,7 +89,7 @@ this.setState({
                 
 <Row> */}
    
-    <CardColumns style={{width:'80rem',marginLeft:'8rem'}}>
+    <CardColumns style={{width:'75rem'}}>
     {/* <Container style={{width:'40rem'}}>
           <Row style={{width:'40rem'}}>
               <Col style={{width:'18rem'}}> */}

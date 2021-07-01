@@ -87,13 +87,14 @@ class Profile extends Component {
         })
         console.log(newFavAfterdelet.data)
         console.log('after',this.state.food)
+        
       }
     render() {
         const { user } = this.props.auth0;
         return (
             <div className="p-card">
                 <UserInfoForm show={this.state.show} hide={this.hideModal} saveUser={this.saveUsersInfo} />
-                <Card style={{ width: '18rem' }} className="procard">
+                <Card  className="procard">
                     <Card.Body>
                         <Image src={user.picture} roundedCircle />
                         <Card.Title>{user.name}</Card.Title>
@@ -117,11 +118,11 @@ class Profile extends Component {
                                                         return (
                                                             <Col>
                                                                 <Card id="searchFoodCard"  >
-                                                                    <Card.Img id="image" variant="top" src={item.image} onClick={this.Contact} />
+                                                                    <Card.Img id="image" variant="top" src={item.image}  />
                                                                     <Card.Body id="cardBody">
                                                                         <Card.Title class="title">{item.label}</Card.Title>
                                                                         <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
-                                                                        <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
+                                                                        <Card.Text class="calories">346<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
                                                                    <Button variant="secondary" value={idx} onClick={this.deletFunction} className="in">Delete</Button>
                                                                     </Card.Body>
                                                                 </Card>
@@ -131,11 +132,11 @@ class Profile extends Component {
                                     return (
                                         <Col>
                                             <Card id="searchFoodCard"  >
-                                                <Card.Img id="image" variant="top" src={item.image} onClick={this.Contact} />
+                                                <Card.Img id="image" variant="top" src={item.image}  />
                                                 <Card.Body id="cardBody">
                                                     <Card.Title class="title">{item.label}</Card.Title>
                                                     <Card.Text id="deatalis"> Click On The Picture For More Deatails</Card.Text>
-                                                    <Card.Text class="calories">888<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
+                                                    <Card.Text class="calories">346<img src="https://img.icons8.com/emoji/33/000000/fire.png" /></Card.Text>
                                                <Button variant="secondary" value={idx} onClick={this.deletFunction} className="in">Delete</Button>
                                                 </Card.Body>
                                             </Card>
