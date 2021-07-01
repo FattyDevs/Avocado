@@ -135,7 +135,9 @@ font-family: 'Pacifico', cursive;
 }
 
 .nav-bar-group{
-  padding-left: 400px;
+  padding: 0px;
+  margin: 0px;
+
 }
 
 .bu {
@@ -161,4 +163,8 @@ font-family: 'Pacifico', cursive;
   color:  #FA9905;
   background-color: white;
   border-color:  #FA9905;
+}
+
+.NavbarItems{
+  width: 100%;
 }

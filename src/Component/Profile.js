@@ -25,7 +25,7 @@ class Profile extends Component {
         this.checkUserAuth();
     }
     checkUserAuth = async () => {
-        const dataURL = await axios.get(`http://localhost:3010/`);
+        const dataURL = await axios.get(`${process.env.REACT_APP_HOME}/`);
         const data = dataURL.data;
         console.log(data);
         this.setState({
@@ -61,7 +61,7 @@ class Profile extends Component {
         }
         console.log(`data from form ${newUser}`);
         console.log(newUser);
-        let addNewUser = await axios.post(`http://localhost:3010/newUser`, newUser);
+        let addNewUser = await axios.post(`${process.env.REACT_APP_HOME}/newUser`, newUser);
         // this.state.users.push(addNewUser);
         this.setState({
             users: addNewUser.data,
@@ -80,7 +80,7 @@ class Profile extends Component {
         }
         console.log(ownerEmail)
         console.log('befor',this.state.food)
-        let newFavAfterdelet = await axios.delete(`http://localhost:3010/deleteFood/${index}`, { params: ownerEmail })
+        let newFavAfterdelet = await axios.delete(`${process.env.REACT_APP_HOME}/deleteFood/${index}`, { params: ownerEmail })
         this.setState({
             // users: newFavAfterdelet.data
             food:newFavAfterdelet.data.foods,
