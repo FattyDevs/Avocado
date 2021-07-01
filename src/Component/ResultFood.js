@@ -71,7 +71,7 @@ class ResultFood extends React.Component{
             mealType:this.props.mealType,
         }
         console.log(AddFood) 
-        const favFood= await axios.post(`http://localhost:3010/addFood`,AddFood)
+        const favFood= await axios.post(`${process.env.REACT_APP_HOME}/addFood`,AddFood)
         console.log(favFood.data)
         this.setState({
             favFood:favFood.data
