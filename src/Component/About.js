@@ -22,7 +22,7 @@ class About extends React.Component {
         return (
             <>
             <div className="blockAbout">
-                <h1 className='textAbout' style={{fontSize:'1.3rem'}}>
+                <p> className='textAbout' style={{fontSize:'1.3rem'}}>
 
                 Avocado Web Application is an idea for a project that we decided to start implementing. It is a suitable place for anyone who wants to start a healthy life.
 On this website’s main page you will find everything lifestyle related to nutrition, fitness, and sport.
@@ -33,9 +33,8 @@ We always strive for excellence in our field.
                
             </div>
             <div className="divImages">
-            <h1 className='meetText'>
-                 
-                </h1>
+            {/* <h1 className='meetText'>
+                  */}
 
                    <OverlayTrigger
                      className="card"
